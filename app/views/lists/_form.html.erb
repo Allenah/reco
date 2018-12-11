@@ -1,0 +1,9 @@
+<%= simple_form_for(@list) do |f| %>
+    <%= f.input :list_type, :label => "Type", collection: ['restaurants', 'movies', 'albums', 'mixed'], as: :select, prompt: 'Select list' %>
+    <%= f.input :name, :label => "Title" %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.input :description, input_html: {maxlength: 200} %>
+    <%= f.submit "Add list", class: "btn btn-primary" %>
+    <% raise %>
+<% end %>
