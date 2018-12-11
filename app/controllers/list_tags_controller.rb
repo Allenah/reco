@@ -1,0 +1,2 @@
+class ListTagsController < ApplicationController
+end
