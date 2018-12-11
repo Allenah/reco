@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+
   def new
     @list = List.new
   end
@@ -12,10 +13,19 @@ class ListsController < ApplicationController
       render :new
     end
   end
+  
+  
+  def show
+    @list = List.find(params[:id])
+    @listtags = ListTag.where(list_id: @list)
+    @items = Item.where(list_id: @list)
+
+  end
 
   private
 
   def list_params
     params.require(:list).permit(:list_type, :name, :photo, :description)
   end
+
 end
