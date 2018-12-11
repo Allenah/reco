@@ -1,0 +1,60 @@
+.item {
+  margin: 20px;
+  // height: 250px;
+  background: white;
+  border-radius: 4px;
+  box-shadow:  0 1px 7px rgba(0,0,0,.05);
+  height: auto;
+}
+
+.item-photo {
+ height: 175px;
+ background-position: center;
+ background-size: cover;
+}
+
+.item-details {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.item-name {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.item-hashtags p {
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.item-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-user {
+ width: 40px;
+ border-radius: 50%;
+}
+
+.restaurant-owner {
+  margin-right: 10px;
+  i {
+    margin-left: 5px;
+  }
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.link-to-text-color {
+  color: #605a56;
+}
+
+a.link-to-text-color:hover {
+  color: #929aab;
+}
+
