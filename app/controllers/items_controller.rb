@@ -1,11 +1,12 @@
 class ItemsController < ApplicationController
   def new
+    @list = List.find(params[:list_id])
     @item = Item.new
   end
 
   def create
-    @item = Item.new(item_params)
     @list = List.find(params[:list_id])
+    @item = Item.new(item_params)
     @item.list = @list
     if @item.save
       redirect_to list_path(@list)
@@ -22,8 +23,9 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @list = List.find(params[:id])
-    @list.update(list_params)
+    @item = Item.find(params[:id])
+    @list = @item.list
+    @item.update(item_params)
     redirect_to list_path(@list)
   end
 

@@ -21,9 +21,9 @@
               <% end %>
             </div>
             <div class="list-delete-icon">
-             <%= link_to list_path(i), method: :delete, data: { confirm: 'Are you sure?' } do %>
+             <%= link_to list_item_path(i.list, i), method: :delete, data: { confirm: 'Are you sure?' } do %>
                  <i class="fas fa-trash-alt"></i>
-             <% end %>
+              <% end %>
             </div>
             <div class="list-check-icon">
              <i class="fas fa-check-square"></i>
