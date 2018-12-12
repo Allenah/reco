@@ -1,5 +1,5 @@
 import "bootstrap";
-import {horizontalScrollingBanner, setUpElements, scrollTheBanners} from "../components/home";
-horizontalScrollingBanner();
-setUpElements();
-scrollTheBanners();
+// import {horizontalScrollingBanner, setUpElements, scrollTheBanners} from "../components/home";
+// horizontalScrollingBanner();
+// setUpElements();
+// scrollTheBanners();
