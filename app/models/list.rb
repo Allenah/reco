@@ -3,7 +3,8 @@ class List < ApplicationRecord
   has_many :items, dependent: :destroy
   has_many :follows, dependent: :destroy
   has_many :listTags, dependent: :destroy
+  has_many :tags, through: :listTags
   validates :name, :photo, :description, presence: true
-  validates :list_type, presence: true, inclusion: { in: ['restaurants', 'movies', 'albums', 'mixed'] }
+  validates :list_type, presence: true, inclusion: { in: ['restaurants', 'movies', 'albums', 'mixed'], case_sensitive: false }
   mount_uploader :photo, PhotoUploader
 end
