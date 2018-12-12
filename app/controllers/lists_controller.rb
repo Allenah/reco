@@ -13,13 +13,17 @@ class ListsController < ApplicationController
       render :new
     end
   end
-  
-  
+
   def show
     @list = List.find(params[:id])
     @listtags = ListTag.where(list_id: @list)
     @items = Item.where(list_id: @list)
+  end
 
+  def destroy
+    @list = List.find(params[:id])
+    @list.destroy
+    redirect_to cocktails_path
   end
 
   private
