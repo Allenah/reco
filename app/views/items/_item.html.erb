@@ -16,20 +16,24 @@
               <p>COMMENTS HERE</p>
             </div>
             <div class="list-edit-icon">
-         <i class="fas fa-pencil-alt"></i>
-        </div>
-        <div class="list-delete-icon">
-         <i class="fas fa-trash-alt"></i>
-        </div>
-        <div class="list-check-icon">
-         <i class="fas fa-check-square"></i>
-        </div>
-        <div class="list-comment-icon">
-         <i class="far fa-comment"></i>
-        </div>
-        <div class="list-bookmark-icon">
-         <i class="fas fa-bookmark"></i>
-        </div>
+             <%= link_to edit_list_item_path(i) do %>
+              <i class="fas fa-pencil-alt"></i>
+              <% end %>
+            </div>
+            <div class="list-delete-icon">
+             <%= link_to list_path(i), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                 <i class="fas fa-trash-alt"></i>
+             <% end %>
+            </div>
+            <div class="list-check-icon">
+             <i class="fas fa-check-square"></i>
+            </div>
+            <div class="list-comment-icon">
+             <i class="far fa-comment"></i>
+            </div>
+            <div class="list-bookmark-icon">
+             <i class="fas fa-bookmark"></i>
+            </div>
           </div>
         </div>
 
