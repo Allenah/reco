@@ -12,9 +12,6 @@
             <div class="item-description">
               <p><%=i.description%></p>
             </div>
-            <div class="item-description">
-              <p>COMMENTS HERE</p>
-            </div>
             <div class="list-edit-icon">
              <%= link_to edit_list_item_path(i) do %>
               <i class="fas fa-pencil-alt"></i>
@@ -33,6 +30,24 @@
             </div>
             <div class="list-bookmark-icon">
              <i class="fas fa-bookmark"></i>
+            </div>
+            <div class="comment-container">
+              <p>COMMENTS HERE</p>
+              <%= simple_form_for [@list, i, @comment] do |f| %>
+              <%= f.input :description %>
+              <%= f.submit "Add Comment", class: "btn btn-success" %>
+            <% end %>
+            <% i.comments.each do |c| %>
+              <div class="message">
+                <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/carolinalemos">
+                <div class="message-body">
+                  <span><strong>Carolina</strong>
+                    <br>
+                    <%= c.description %>
+                  </span>
+                </div>
+              </div>
+            <% end %>
             </div>
           </div>
         </div>
