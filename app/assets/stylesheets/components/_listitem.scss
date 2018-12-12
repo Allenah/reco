@@ -8,9 +8,9 @@
 }
 
 .item-photo {
- height: 175px;
  background-position: center;
- background-size: cover;
+ background-size: cover !important;
+ height: 200px;
 }
 
 .item-details {
