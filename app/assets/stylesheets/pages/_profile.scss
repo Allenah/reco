@@ -1,0 +1,25 @@
+
+.container-profile {
+  max-width: 93.5rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+}
+
+.profile {
+    padding: 5rem 0;
+}
+
+.avatar {
+    float: left;
+    width: 100px;
+    border-radius: 50%;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+    margin-right: 3rem;
+}
+
