@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-
   def new
     @item = Item.new
   end
@@ -37,5 +36,4 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :photo, :description, :list_id)
   end
-
 end
