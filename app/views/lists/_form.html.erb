@@ -3,6 +3,7 @@
     <%= f.input :name, :label => "Title" %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
+    <%= f.association :tags, collection: Tag.all, include_blank: false, include_hidden: false %>
     <%= f.input :description, input_html: {maxlength: 200} %>
     <%= f.submit "Add list", class: "btn btn-primary" %>
 <% end %>

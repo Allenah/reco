@@ -1,5 +1,4 @@
 class ListsController < ApplicationController
-
   def new
     @list = List.new
   end
@@ -13,8 +12,7 @@ class ListsController < ApplicationController
       render :new
     end
   end
-  
-  
+
   def show
     @list = List.find(params[:id])
     @listtags = ListTag.where(list_id: @list)
