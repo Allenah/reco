@@ -1,0 +1,19 @@
+<div class="item-icons">
+  <div class="list-edit-icon">
+   <%= link_to edit_list_item_path(item) do %>
+    <i class="fas fa-pencil-alt"></i>
+    <% end %>
+  </div>
+  <div class="list-delete-icon">
+   <%= link_to list_item_path(item.list, item), method: :delete, data: { confirm: 'Are you sure?' } do %>
+       <i class="fas fa-trash-alt"></i>
+    <% end %>
+  </div>
+  <div class="list-comment-icon">
+   <i class="far fa-comment"></i>
+  </div>
+  <div class="list-bookmark-icon">
+   <i class="fas fa-bookmark"></i>
+  </div>
+</div>
+
