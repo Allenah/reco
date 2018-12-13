@@ -1,15 +1,17 @@
 <div class="friends">
-  <h2>Your friends</h2>
+  <h3>Your friends on re:co</h3>
   <div class="row">
     <% @friends.each do |f| %>
-      <div class="item">
-        <div class="col-xs-12">
-          <div class="avatar" style="background-image: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url('<%= cl_image_path f.photo %>')">
-            <div>
-        <p><%= f.first_name %> <%= f.last_name %></p>
-        </div>
-
-    </div>
-  </div>
-  <% end %>
+    <div class="col-xs-12">
+      <div class="friend">
+        <div class="avatar" style="background-image: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url('<%= cl_image_path f.photo %>')"></div>
+        <div class="friend-body">
+          <p><strong><%= f.first_name %> <%= f.last_name %></strong></p>
+         <p>20 Re:co's</p>
+       </div>
+     </div>
+   </div>
+   <% end %>
+ </div>
 </div>
+
