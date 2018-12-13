@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   has_many :follows, dependent: :destroy
+  has_many :friendships, dependent: :destroy
+  has_many :friends, through: :friendships
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   mount_uploader :photo, PhotoUploader

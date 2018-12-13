@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_11_143106) do
+ActiveRecord::Schema.define(version: 2018_12_13_131130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2018_12_11_143106) do
     t.datetime "updated_at", null: false
     t.index ["list_id"], name: "index_follows_on_list_id"
     t.index ["user_id"], name: "index_follows_on_user_id"
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "friend_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friend_id"], name: "index_friendships_on_friend_id"
+    t.index ["user_id"], name: "index_friendships_on_user_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -109,6 +118,7 @@ ActiveRecord::Schema.define(version: 2018_12_11_143106) do
   add_foreign_key "comments", "users"
   add_foreign_key "follows", "lists"
   add_foreign_key "follows", "users"
+  add_foreign_key "friendships", "users"
   add_foreign_key "items", "lists"
   add_foreign_key "likes", "items"
   add_foreign_key "likes", "users"
