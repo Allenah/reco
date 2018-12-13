@@ -15,8 +15,11 @@
 }
 
 .avatar-large {
-  width: 50px;
+  width: 150px;
   border-radius: 50%;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
 }
 .avatar-bordered {
   width: 30px;
