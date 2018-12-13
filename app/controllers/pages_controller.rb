@@ -6,5 +6,6 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
+    @lists = current_user.lists
   end
 end
