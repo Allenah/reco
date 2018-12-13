@@ -1,19 +1,28 @@
+
 <div class="profile">
   <div class="profile-photo">
-  <div class="avatar" style="background-image: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url('<%= cl_image_path @user.photo %>')">
+   <div class="avatar-large" style="background-image: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url('<%= cl_image_path @user.photo %>')">
+   </div>
   </div>
-  </div>
-
+  <div class= "profile-details">
   <div class="profile-user-settings">
     <h4><%= @user.first_name  %> <%= @user.last_name%></h4>
   </div>
+    <!-- <div>
+      <p class="bio">I am the Mastermind behind Collaborative lists for life's great recommendations.
+      </p>
+    </div> -->
 
   <div class="profile-stats">
     <ul class="list-inline">
-      <li><span class="profile-stat-count">3</span> Re:Co's</li>
-      <li><span class="profile-stat-count">7</span> Done that</li>
-      <li><span class="profile-stat-count">12</span> Bucket List</li>
+      <li><%= image_tag "logo.1.png" %>
+        <span class="profile-stat-count">3</span> Lists</li>
+      <li><i class="fas fa-check-square"></i>
+        <span class="profile-stat-count">7</span> Done that's</li>
+      <li><i class="fas fa-star"></i>
+        <span class="profile-stat-count">12</span> Bucket List</li>
     </ul>
+  </div>
   </div>
 </div>
 <div><h3><i class="fas fa-list"></i> My Lists</h3></div>
@@ -27,7 +36,7 @@
 
           <div class="restaurant-details">
             <div class="restaurant-name">
-              <%= l.name %>
+              <h3><%= l.name %></h3>
             </div>
           </div>
         </div>
