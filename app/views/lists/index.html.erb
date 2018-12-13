@@ -1,10 +1,12 @@
+<div class="search">
 <%= form_tag lists_path, method: :get do %>
  <%= text_field_tag :query,
    params[:query],
    class: "form-control",
-   placeholder: "Search"
+   placeholder: "Search lists"
  %>
 <% end %>
+</div>
 
 <% @lists.each do |l| %>
   <div class="col-xs-12 col-sm-6 col-md-4">
