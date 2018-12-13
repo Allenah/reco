@@ -1,4 +1,5 @@
-(function horizontalScrollingBanner() {
+function horizontalScrollingBanner() {
+  console.log('hello from scrollingBanner');
   var banners = document.getElementsByClassName('horizontal-scrolling-banner');
   if (!banners || banners.length === 0) {
     return;
@@ -75,6 +76,5 @@
     }
     requestAnimationFrame(scrollTheBanners);
   }
-})();
-export {horizontalScrollingBanner, setUpElements, scrollTheBanners}
-
+};
+export {horizontalScrollingBanner}
