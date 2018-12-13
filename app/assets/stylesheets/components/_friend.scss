@@ -1,0 +1,18 @@
+.friend {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+}
+
+.friend-body {
+  padding: 0px 10px 0px 20px;
+  text-align: left;
+  p {
+    font-size: 18px;
+  }
+}
+
+.friend .avatar {
+  margin-right: 0px;
+}
