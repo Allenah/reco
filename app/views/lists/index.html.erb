@@ -1,10 +1,33 @@
+<%= form_tag lists_path, method: :get do %>
+ <%= text_field_tag :query,
+   params[:query],
+   class: "form-control",
+   placeholder: "Search"
+ %>
+<% end %>
 
- <div class = container-fluid>
-     <%= form_tag lists_path, method: :get do %>
-       <%= text_field_tag :query,
-         params[:query],
-         class: "form-control",
-         placeholder: "Search"
-       %>
-     <% end %>
-   </div>
+<% @lists.each do |l| %>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <%= link_to list_path(l), class: 'link-to-text-color' do %>
+      <div class="restaurant">
+        <div class="restaurant-photo" style="background: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url(<%= l.photo %>) center / cover no-repeat;"></div>
+        <div class="restaurant-info">
+
+          <div class="restaurant-details">
+            <div class="restaurant-name">
+              <%= l.name %>
+            </div>
+            <div class="restaurant-cuisine">
+              <p> <%= l.user.first_name %> </p>
+            </div>
+          </div>
+          <div class="restaurant-owner">
+            <span><img class="card-user" src="https://kitt.lewagon.com/placeholder/users/pbusby"></span>
+            <span><i class="fas fa-ellipsis-v"></i></span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
