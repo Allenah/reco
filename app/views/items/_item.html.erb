@@ -13,25 +13,13 @@
               <div class="item-description">
                 <p><%=i.description%></p>
               </div>
-              <div class="list-edit-icon">
-               <%= link_to edit_list_item_path(i) do %>
-                <i class="fas fa-pencil-alt"></i>
-                <% end %>
-              </div>
-              <div class="list-delete-icon">
-               <%= link_to list_item_path(i.list, i), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                   <i class="fas fa-trash-alt"></i>
-                <% end %>
-              </div>
-              <div class="list-check-icon">
-               <i class="fas fa-check-square"></i>
-              </div>
-              <div class="list-comment-icon">
-               <i class="far fa-comment"></i>
-              </div>
-              <div class="list-bookmark-icon">
-               <i class="fas fa-bookmark"></i>
-              </div>
+
+              <% if user_signed_in? && current_user.id == i.list.user_id %>
+                <%= render partial: "items/ownericons", locals: {item: i} %>
+              <% else %>
+                <%= render partial: "items/viewericons", locals: {item: i} %>
+              <% end %>
+
               <div class="comment-container">
                 <p>COMMENTS HERE</p>
                 <%= simple_form_for [@list, i, @comment] do |f| %>
