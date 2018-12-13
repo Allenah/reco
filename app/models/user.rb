@@ -11,6 +11,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   mount_uploader :photo, PhotoUploader
+
+  def liked_item?(item_id)
+    likes.where(user_id: id, item_id: item_id).any?
+  end
+
 end
 
 
