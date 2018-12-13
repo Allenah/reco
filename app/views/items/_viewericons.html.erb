@@ -1,6 +1,14 @@
 <div class="item-icons">
+
   <div class="list-check-icon">
-   <i class="fas fa-check-square"></i>
+    <% if user_signed_in? && current_user.liked_item?(item.id) %>
+
+    <%= render "reviews/form" %>
+
+    <% end %>
+    <%= link_to list_item_likes_path(item.list, item), method: :post do %>
+    <i class="fas fa-check-square active-green"></i>
+    <% end %>
   </div>
   <div class="list-comment-icon">
    <i class="far fa-comment"></i>

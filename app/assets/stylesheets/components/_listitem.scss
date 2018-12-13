@@ -12,6 +12,18 @@
   justify-content: space-around;
 }
 
+.item-icons a {
+  color: $my-gray;
+}
+
+.item-icons a:hover {
+  color: $my-green;
+}
+
+.item-icons a:focus {
+  color: $my-green;
+}
+
 
 .item-photo {
  background-position: center;
