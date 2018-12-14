@@ -1,13 +1,14 @@
 <div class="friends">
-  <h3>Your friends on re:co</h3>
+  <h4><strong>Better with friends!</strong></h4>
   <div class="row">
     <% @friends.each do |f| %>
     <div class="col-xs-12">
       <div class="friend">
-        <div class="avatar" style="background-image: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url('<%= cl_image_path f.photo %>')"></div>
+        <div class="avatar" style="background-image: url('<%= cl_image_path f.photo %>')"></div>
         <div class="friend-body">
           <p><strong><%= f.first_name %> <%= f.last_name %></strong></p>
-         <p>20 Re:co's</p>
+          <p>20 Re:co's</p>
+          <p>15 Done That</p>
        </div>
      </div>
    </div>
