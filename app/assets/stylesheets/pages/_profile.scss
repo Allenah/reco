@@ -5,19 +5,20 @@
 
 // }
 
-.profile {
+.profile-info {
   display: flex;
   align-items: center;
   justify-content: space-around;
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 15px;
 }
 
-.avatar {
-  margin: 20px;
+.profile-photo .avatar {
+  width: 80px;
+  height: 80px;
 }
 
-img {
+.profile-stats img {
   height: 15px;
   margin-bottom: 3px;
 }
@@ -27,3 +28,43 @@ img {
   font-weight: bold;
 }
 
+.profile-details h4 {
+  font-weight: bold;
+}
+
+.list-details {
+  text-align: left;
+  h4 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 5px 0px;
+  }
+  p {
+    font-size: 18px;
+    margin: 0px;
+  }
+}
+
+.lists-restaurants {
+  h4 {
+    text-align: left;
+    margin-left: 15px;
+    font-weight: bold;
+  }
+}
+
+.lists-movies {
+  h4 {
+    text-align: left;
+    margin-left: 15px;
+    font-weight: bold;
+  }
+}
+
+.lists-albums {
+  h4 {
+    text-align: left;
+    margin-left: 15px;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,23 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: 70vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner h2 {
+  font-size: 32px;
+  color: white;
+  margin: 15px;
+  padding: 15px;
+}
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: white;
+  opacity: 1;
+  margin-bottom: 30px;
+}

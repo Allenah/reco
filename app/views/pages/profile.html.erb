@@ -1,47 +1,54 @@
-
 <div class="profile">
-  <div class="profile-photo">
-   <div class="avatar-large" style="background-image: url('<%= cl_image_path @user.photo %>')">
+  <div class="profile-info">
+    <div class="profile-photo">
+     <div class="avatar" style="background-image: url('<%= cl_image_path @user.photo %>')"></div>
    </div>
-  </div>
-  <div class= "profile-details">
-  <div class="profile-user-settings">
+   <div class= "profile-details">
     <h4><%= @user.first_name  %> <%= @user.last_name%></h4>
-  </div>
-    <!-- <div>
-      <p class="bio">I am the Mastermind behind Collaborative lists for life's great recommendations.
-      </p>
-    </div> -->
-
-  <div class="profile-stats">
-    <ul class="list-inline">
-      <li><%= image_tag "logo.1.png" %>
-        <span class="profile-stat-count">3</span> Lists</li>
-      <li><i class="fas fa-check-square"></i>
-        <span class="profile-stat-count">7</span> Done that's</li>
-      <li><i class="fas fa-star"></i>
-        <span class="profile-stat-count">12</span> Bucket List</li>
-    </ul>
-  </div>
-  </div>
-</div>
-<div><h3><i class="fas fa-list"></i> My Lists</h3></div>
-<div class="user-lists">
-<% @lists.each do |l| %>
-  <div class="col-xs-12 col-sm-6 col-md-4">
-    <%= link_to list_path(l), class: 'link-to-text-color' do %>
-      <div class="restaurant">
-        <div class="restaurant-photo" style="background: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url(<%= l.photo %>) center / cover no-repeat;"></div>
-        <div class="restaurant-info">
-
-          <div class="restaurant-details">
-            <div class="restaurant-name">
-              <h3><%= l.name %></h3>
-            </div>
+    <div class="profile-stats">
+      <ul class="list-inline">
+        <li><%= image_tag "logo.1.png" %>
+          <span class="profile-stat-count">3</span> Lists</li>
+          <li><i class="fas fa-check-square"></i>
+            <span class="profile-stat-count">7</span> Done that's</li>
+            <li><i class="fas fa-bookmark"></i>
+              <span class="profile-stat-count">12</span> Bucket List</li>
+            </ul>
           </div>
         </div>
       </div>
-    <% end %>
-  </div>
-<% end %>
-</div>
+      <div class="profile-lists">
+        <div><h4><i class="fas fa-list"></i> My Lists</h4></div>
+        <div class="user-lists">
+          <div class="lists-restaurants">
+          <h4>My restaurants</h4>
+          </div>
+          <div class="lists-movies">
+          <h4>My movies</h4>
+          </div>
+          <div class="lists-albums">
+          <h4>My albums</h4>
+          </div>
+          <% @lists.each do |l| %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <%= link_to list_path(l), class: 'link-to-text-color' do %>
+            <div class="restaurant">
+              <div class="restaurant-photo" style="background: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url(<%= l.photo %>) center / cover no-repeat;"></div>
+              <div class="restaurant-info">
+
+                <div class="restaurant-details">
+                  <div class="list-details">
+                    <h4><%= l.name %></h4>
+                    <p><%= l.items.count %> Re:co's</p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
