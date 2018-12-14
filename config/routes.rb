@@ -15,6 +15,6 @@ Rails.application.routes.draw do
 
   resources :items, only: [:new, :create]
   get 'profile', to: 'pages#profile'
-  resources :friendships, only: :index
+  resources :friendships, only: [:index, :show]
 
 end
