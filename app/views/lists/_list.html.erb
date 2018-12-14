@@ -19,9 +19,10 @@
               <p><%= @list.description %> </p>
               </div>
 
-                <% if user_signed_in? && current_user.id =! @list.user.id %>
+                <% if user_signed_in? && current_user.id != @list.user.id %>
                   <%= render "lists/followicon" %>
                 <% end %>
+
 
               <div class="list-hashtags">
                 <p><% @listtags.each do |l| %>
