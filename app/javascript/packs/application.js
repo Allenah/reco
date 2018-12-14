@@ -2,12 +2,12 @@ import "bootstrap";
 import './application.css'
 import {select} from '../components/select';
 import {megamodal} from '../components/modal';
+// import {classToggle} from '../components/listitem';
 select();
 megamodal();
-import {horizontalScrollingBanner} from "../components/home";
-horizontalScrollingBanner();
-// import {horizontalScrollingBanner, setUpElements, scrollTheBanners} from "../components/home";
+// import {horizontalScrollingBanner} from "../components/home";
 // horizontalScrollingBanner();
-// setUpElements();
+// // setUpElements();
 // scrollTheBanners();
+// classToggle();
 

@@ -12,6 +12,14 @@
   justify-content: space-around;
 }
 
+.active-green {
+  color: $my-green;
+}
+
+.inactive-gray {
+  color: $my-gray;
+}
+
 .item-icons a {
   color: $my-gray;
 }
@@ -20,9 +28,9 @@
   color: $my-green;
 }
 
-.item-icons a:focus {
-  color: $my-green;
-}
+// .item-icons a:focus {
+//   color: $my-green;
+// }
 
 
 .item-photo {
