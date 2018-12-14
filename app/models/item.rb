@@ -5,4 +5,7 @@ class Item < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   validates :name, :photo, :description, presence: true
   mount_uploader :photo, PhotoUploader
+
+
+
 end
