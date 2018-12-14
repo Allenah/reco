@@ -12,7 +12,7 @@
   <div class="col-xs-12 col-sm-6 col-md-4">
     <%= link_to list_path(l), class: 'link-to-text-color' do %>
       <div class="restaurant">
-        <div class="restaurant-photo" style="background: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url(<%= l.photo %>) center / cover no-repeat;"></div>
+        <div class="restaurant-photo" style="background: url(<%= l.photo %>) center / cover no-repeat;"></div>
         <div class="restaurant-info">
 
           <div class="restaurant-details">
@@ -20,12 +20,11 @@
               <%= l.name %>
             </div>
             <div class="restaurant-cuisine">
-              <p> <%= l.user.first_name %> </p>
+              <p> By <%= l.user.first_name %> <%= l.user.last_name %> </p>
             </div>
           </div>
           <div class="restaurant-owner">
-            <span><img class="card-user" src="https://kitt.lewagon.com/placeholder/users/pbusby"></span>
-            <span><i class="fas fa-ellipsis-v"></i></span>
+            <span><img class="avatar-md" src="<%= cl_image_path l.user.photo %>"></span>
           </div>
         </div>
       </div>
