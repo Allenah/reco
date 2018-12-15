@@ -1,5 +1,5 @@
 .restaurant {
-  margin: 20px;
+  margin: 20px 20px 0px 20px;
   height: 250px;
   background: white;
   border-radius: 4px;
@@ -31,8 +31,11 @@
 }
 
 .restaurant-name {
+  h4 {
   font-weight: bold;
   font-size: 22px;
+
+  }
 }
 
 .restaurant-cuisine p {
@@ -67,6 +70,8 @@ a {
 }
 
 a.link-to-text-color:hover {
+  h4 {
   color: #929aab;
+  }
 }
 

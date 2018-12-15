@@ -1,5 +1,5 @@
 .item {
-  margin: 20px 15px;
+  margin: 20px 15px 0px 15px;
   // height: 250px;
   background: white;
   border-radius: 4px;
@@ -44,9 +44,11 @@
 }
 
 .item-name {
+  text-align: left;
+  h4 {
   font-weight: bold;
   font-size: 22px;
-  text-align: left;
+  }
 }
 
 .item-description {
