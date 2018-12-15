@@ -7,14 +7,15 @@
   <div class="list-delete-icon">
    <%= link_to list_item_path(item.list, item), method: :delete, data: { confirm: 'Are you sure?' } do %>
        <i class="fas fa-trash-alt"></i>
-
     <% end %>
   </div>
   <div class="list-comment-icon">
-   <a data-toggle="collapse" href="#collapseComments" role="button" aria-expanded="false" aria-controls="collapseComments" id="toggle"><i class="far fa-comment"></i></a>
+   <a data-toggle="collapse" href="<%= "#collapse#{item.id}" %>" role="button" aria-expanded="false" aria-controls="<%="collapse#{item.id}" %>"><i class="far fa-comment"></i></a>
+
   </div>
   <div class="list-bookmark-icon">
    <i class="fas fa-bookmark"></i>
   </div>
 </div>
 
+<!-- aria-controls="#{item.id}" -->
