@@ -8,7 +8,7 @@
     <div class="profile-stats">
       <ul class="list-inline">
         <li><%= image_tag "logo.1.png" %>
-          <span class="profile-stat-count">3</span> Lists</li>
+          <span class="profile-stat-count"><%= @user.lists.count %></span> Lists</li>
           <li><i class="fas fa-check-square"></i>
             <span class="profile-stat-count">7</span> Done that's</li>
             <li><i class="fas fa-bookmark"></i>
