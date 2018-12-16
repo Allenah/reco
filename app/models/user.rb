@@ -25,8 +25,20 @@ class User < ApplicationRecord
     self.likes.find_by_item_id(item.id)
   end
 
-  def liked_item?(item_id)
-    likes.where(user_id: id, item_id: item_id).any?
+  # def liked_item?(item_id)
+  #   likes.where(user_id: id, item_id: item_id).any?
+  # end
+
+  def follow!(list)
+    self.follows.create(list_id: list.id)
+  end
+
+  def unfollow!(list)
+    follow = self.follows.find_by_list_id(list.id)
+  end
+
+  def followed?(list)
+    self.follows.find_by_list_id(list.id)
   end
 
 end

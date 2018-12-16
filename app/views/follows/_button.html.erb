@@ -1,0 +1,6 @@
+
+<% if current_user.followed?(@list) %>
+  <%= button_to "Unfollow", list_follow_path(@list, current_user), remote: true, method: :delete, class: "unfollow-btn" %>
+<% else %>
+  <%= button_to "Follow", list_follows_path(@list, current_user), remote: true, method: :post, class: "follow-btn" %>
+<% end %>

@@ -1,0 +1,3 @@
+$('div#<%= dom_id(@list) %>').html('<%= j render partial: "button", locals: {list: @list} %>');
+$('div#<%= dom_id(@list) %>').removeClass('followed');
+

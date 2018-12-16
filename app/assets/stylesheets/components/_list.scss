@@ -6,11 +6,38 @@
   position: relative;
 }
 
+.list-title {
+ display: inline-block;
+}
+
 .list-title h3 {
   margin-bottom: 10px;
   margin-top: 0px;
   display: inline-block;
   font-weight: bold;
+}
+
+.follow-btn-container {
+  display: inline-block;
+}
+
+.follow-btn {
+  background-color: white;
+  color: $my-green;
+  border: solid 1px $my-green;
+  font-size: 10px;
+  padding: 5px 10px;
+  line-height: 5px;
+  border-radius: 5px;
+}
+
+.unfollow-btn {
+  background-color: $my-green;
+  color: white;
+  font-size: 10px;
+  padding: 5px 10px;
+  line-height: 5px;
+  border-radius: 5px;
 }
 
 .avatar-position {
