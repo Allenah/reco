@@ -1,0 +1,6 @@
+
+<% if current_user.liked?(item) %>
+  <%= button_to "Unheart", list_item_like_path(item.list, item, current_user), remote: true, method: :delete, class: "liked"  %>
+<% else %>
+  <%= button_to "Heart", list_item_likes_path(item.list, item, current_user), remote: true, method: :post  %>
+<% end %>

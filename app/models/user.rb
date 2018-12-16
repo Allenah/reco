@@ -13,7 +13,17 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   mount_uploader :photo, PhotoUploader
 
+  def like!(item)
+    self.likes.create(item_id: item.id)
+  end
 
+  def unlike!(item)
+    like = self.likes.find_by_item_id(item.id)
+  end
+
+  def liked?(item)
+    self.likes.find_by_item_id(item.id)
+  end
 
   def liked_item?(item_id)
     likes.where(user_id: id, item_id: item_id).any?
