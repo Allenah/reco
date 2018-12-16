@@ -3,7 +3,7 @@
   <div class="likes-container">
     <div class="like-but">
       <%= div_for(item, class: "like-but") do %>
-          <%= render partial: "likes/button", locals: { item: item } %>
+          <%= render partial: "likes/buttonlikes", locals: { item: item } %>
        <% end %>
     </div>
     <div id="<%="likes-count#{item.id}"%>">
@@ -13,8 +13,8 @@
   <div class="list-comment-icon">
    <a data-toggle="collapse" href="<%= "#collapse#{item.id}" %>" role="button" aria-expanded="false" aria-controls="<%="collapse#{item.id}" %>"><i class="far fa-comment"></i></a>
   </div>
-
-  <div class="list-bookmark-icon">
-   <i class="fas fa-bookmark"></i>
-  </div>
+  <div class="like-but">
+  <div id="bm_<%=item.id%>">
+      <%= render partial: "bookmarks/buttonbookmarks", locals: { item: item } %>
+ </div>
 </div>

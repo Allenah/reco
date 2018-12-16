@@ -1,6 +1,5 @@
 function megamodal() {
   // Get the modal
-  console.log("hi there");
   var modal = document.getElementById('myModal');
 
   // Get the button that opens the modal
