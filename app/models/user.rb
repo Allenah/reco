@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :items, :through => :likes
   has_many :bookmarks, dependent: :destroy
+  has_many :items, :through => :bookmarks
   has_many :follows, dependent: :destroy
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
@@ -39,6 +40,18 @@ class User < ApplicationRecord
 
   def followed?(list)
     self.follows.find_by_list_id(list.id)
+  end
+
+  def bookmark!(item)
+    self.bookmarks.create(item_id: item.id)
+  end
+
+  def unbookmark!(item)
+    bookmark = self.bookmarks.find_by_item_id(item.id)
+  end
+
+  def bookmarked?(item)
+    self.bookmarks.find_by_item_id(item.id)
   end
 
 end
