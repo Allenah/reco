@@ -8,6 +8,8 @@ gem 'puma'
 gem 'rails', '5.2.1.1'
 gem 'redis'
 gem 'pg_search'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'responders'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
