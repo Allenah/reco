@@ -11,12 +11,15 @@
   <div class="list-check-count">
 
 
-    <%= link_to "Delete", list_item_like_path(@list, item), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to "Delete", list_item_like_path(@list, item), method: :delete%>
 
   </div>
   <div class="list-comment-icon">
    <a data-toggle="collapse" href="<%= "#collapse#{item.id}" %>" role="button" aria-expanded="false" aria-controls="<%="collapse#{item.id}" %>"><i class="far fa-comment"></i></a>
   </div>
+  <%= div_for(item, class: "like-btn") do %>
+     <%= render partial: "likes/button", locals: { item: item } %>
+  <% end %>
   <div class="list-bookmark-icon">
    <i class="fas fa-bookmark"></i>
   </div>
