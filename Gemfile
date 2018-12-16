@@ -11,6 +11,7 @@ gem 'pg_search'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'responders'
 gem 'record_tag_helper', '~> 1.0'
+gem 'httparty'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
