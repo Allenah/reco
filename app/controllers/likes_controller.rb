@@ -1,7 +1,5 @@
 class LikesController < ApplicationController
-respond_to :js, :json, :html
-
-
+  respond_to :js, :json, :html
   # def create
   #   @user = current_user.id
   #   @item = Item.find(params[:item_id])

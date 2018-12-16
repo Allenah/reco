@@ -13,16 +13,16 @@
                 <% if user_signed_in? && current_user.id == @list.user.id %>
                   <%= render "lists/editicons" %>
                 <% end %>
+                <% if user_signed_in? && current_user.id != @list.user.id %>
+                  <%= div_for(@list, class: "follow-btn-container") do %>
+                      <%= render partial: "follows/button", locals: { list: @list } %>
+                   <% end %>
+                <% end %>
               </div>
 
               <div class="list-description">
               <p><%= @list.description %> </p>
               </div>
-
-                <% if user_signed_in? && current_user.id != @list.user.id %>
-                  <%= render "lists/followicon" %>
-                <% end %>
-
 
               <div class="list-hashtags">
                 <p><% @listtags.each do |l| %>
