@@ -13,7 +13,6 @@ respond_to :js, :json, :html
 
   def destroy
     item = Item.find(params[:item_id])
-    list = List.find(params[:list_id])
     item.likes.where(user_id: current_user).destroy_all
   end
 
@@ -21,7 +20,7 @@ respond_to :js, :json, :html
     if !current_user.liked_item?(@item)
       @like = Like.create(user_id: current_user, item_id: @item.id)
     elsif current_user.liked_item?(@item)
-      @post.unliked_by current_user
+      item.likes.where(user_id: current_user).destroy_all
     end
   end
 
