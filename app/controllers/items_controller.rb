@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+respond_to :js, :json, :html
+
   def new
     @item = Item.new
   end
@@ -31,6 +33,8 @@ class ItemsController < ApplicationController
   def edit
     @item = Item.find(params[:id])
   end
+
+
 
   private
 
