@@ -1,3 +1,4 @@
 $('div#<%= dom_id(@item) %>').html('<%= j render partial: "button", locals: {item: @item} %>');
-$('.like-btn').removeClass('liked');
-$('.likes-count').html("<%=@item.likes.size%>")
+$('div#<%= dom_id(@item) %>').removeClass('liked');
+$('div#likes-count<%=@item.id%>').html("<%=@item.likes.size%>")
+

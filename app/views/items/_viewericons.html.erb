@@ -1,25 +1,19 @@
 <div class="item-icons">
 
-  <div class="like-btn">
-    <%= link_to list_item_likes_path(item.list, item), class: "like-btn", method: :post, remote: true do %>
-    <i class="fas fa-check-square like-btn <%= current_user.liked_item?(item.id) ? 'item-icons active-green' : 'item-icons inactive-gray' %>"></i>
-    <% end %>
-  </div>
-  <div class="likes-count">
-    <%= item.likes.size %>
-  </div>
-  <div class="list-check-count">
-
-
-    <%= link_to "Delete", list_item_like_path(@list, item), method: :delete%>
-
+  <div class="likes-container">
+    <div class="like-but">
+      <%= div_for(item, class: "like-but") do %>
+          <%= render partial: "likes/button", locals: { item: item } %>
+       <% end %>
+    </div>
+    <div id="<%="likes-count#{item.id}"%>">
+      <%= item.likes.size %>
+    </div>
   </div>
   <div class="list-comment-icon">
    <a data-toggle="collapse" href="<%= "#collapse#{item.id}" %>" role="button" aria-expanded="false" aria-controls="<%="collapse#{item.id}" %>"><i class="far fa-comment"></i></a>
   </div>
-  <%= div_for(item, class: "like-btn") do %>
-     <%= render partial: "likes/button", locals: { item: item } %>
-  <% end %>
+
   <div class="list-bookmark-icon">
    <i class="fas fa-bookmark"></i>
   </div>

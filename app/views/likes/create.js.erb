@@ -1,3 +1,4 @@
 $('div#<%= dom_id(@item) %>').html('<%= j render partial: "button", locals: {item: @item} %>');
-$('.like-btn').addClass('liked');
-$('.likes-count').html("<%=@item.likes.size%>")
+$('div#<%= dom_id(@item) %>').addClass('liked');
+$('div#likes-count<%=@item.id%>').html("<%=@item.likes.size%>")
+

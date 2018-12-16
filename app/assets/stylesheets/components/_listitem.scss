@@ -16,10 +16,6 @@
   color: $my-green;
 }
 
-.inactive-gray {
-  color: $my-gray;
-}
-
 .item-icons a {
   color: $my-gray;
 }
@@ -36,8 +32,9 @@
   color: $my-green;
 }
 
-.like-btn {
+.like-but {
   margin-top: 0px;
+  box-shadow: none;
 }
 
 .item-photo {
@@ -48,6 +45,10 @@
 
 .item-details {
 
+}
+
+.likes-container {
+  display: flex;
 }
 
 .item-name {
