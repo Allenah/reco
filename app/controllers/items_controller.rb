@@ -1,8 +1,11 @@
 class ItemsController < ApplicationController
-respond_to :js, :json, :html
+
 
   def new
     @item = Item.new
+    # @items = Item.pluck(:name).sort
+    # results = AutocompleteSearchService.new(params[:q]).call
+    # render json: results
   end
 
   def create
@@ -13,6 +16,7 @@ respond_to :js, :json, :html
       redirect_to list_path(@list)
     else
       render :new
+      raise
     end
   end
 
@@ -34,7 +38,10 @@ respond_to :js, :json, :html
     @item = Item.find(params[:id])
   end
 
-
+  # def autocomplete
+  #   results = AutocompleteSearchService.new(params[:q]).call
+  #   render json: results
+  # end
 
   private
 
