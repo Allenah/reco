@@ -1,5 +1,4 @@
-import $ from 'jquery';
-import "bootstrap";
+
 import './application.css'
 // import { autocompleteSearch } from '../components/autocomplete';
 import {select} from '../components/select';

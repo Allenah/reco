@@ -1,4 +1,4 @@
-.modal {
+.modal-w {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -16,7 +16,7 @@
 }
 
 /* Modal Content */
-.modal-content {
+.modal-content-w {
   position: fixed;
   bottom: 50px;
   background-color: #fefefe;
@@ -42,15 +42,15 @@
   cursor: pointer;
 }
 
-.modal-header {
+.modal-header-w {
   padding: 2px 16px;
   background-color: $my-green;
   color: white;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body-w {padding: 2px 16px;}
 
-.modal-footer {
+.modal-footer-w {
   padding: 2px 16px;
   background-color: #5cb85c;
   color: white;
