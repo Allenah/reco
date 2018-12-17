@@ -1,2 +1,5 @@
+// $("#exampleModalLong").find(".modal-content").html("<%= j (render 'create') %>");
+// $("#exampleModalLong").modal();
 $('div#bm_<%=@item.id%>').html('<%= j render partial: "buttonbookmarks", locals: {item: @item} %>');
 $('div#bm_<%=@item.id%>').addClass('liked');
+

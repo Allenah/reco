@@ -1,5 +1,7 @@
 class BookmarksController < ApplicationController
-def create
+  respond_to :js, :json, :html
+
+  def create
     @item = Item.find(params[:item_id])
     @user = current_user
     @user.bookmark!(@item)

@@ -1,4 +1,4 @@
-  <% @items.each do |i| %>
+<% @items.each do |i| %>
   <div class="col-xs-12">
       <div class="item">
 
@@ -24,10 +24,9 @@
                 <%= f.input :description %>
                 <%= f.submit "Add Comment", class: "btn btn-primary btn-sm" %>
                 <% end %>
-  <!--               id = "#{i.id}"
-   -->              <% i.comments.each do |c| %>
-                  <div class="message">
-                    <img class="avatar-md" src="<%= cl_image_path c.user.photo %>">
+                <% i.comments.each do |c| %>
+                <div class="message">
+                  <img class="avatar-md" src="<%= cl_image_path c.user.photo %>">
                     <div class="message-body">
                       <span><strong><%= c.user.first_name %></strong>
                         <br>
@@ -36,10 +35,9 @@
                     </div>
                   </div>
                 <% end %>
-              </div>
             </div>
           </div>
       </div>
-  </div>
-  <% end %>
+    </div>
+<% end %>
 
