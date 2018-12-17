@@ -4,22 +4,17 @@
     <% @friends.each do |f| %>
     <div class="col-xs-12">
       <div class="friend">
-        <div class="row">
-          <div class="col-xs-9">
         <div class="avatar" style="background-image: url('<%= cl_image_path f.photo %>')"></div>
         <div class="friend-body">
           <p><strong><%= f.first_name %> <%= f.last_name %></strong></p>
           <p><%= rand(5..20) %> Re:co's</p>
           <p><%= rand(5..20) %> Done That</p>
-       </div>
-       </div>
-       <div class="col-xs-3">
-       <div class="see-profile"><%= link_to "See friend", user_path(f), class:"btn btn-primary btn-sm" %></div>
-       </div>
-     </div>
-     </div>
-   </div>
-   <% end %>
- </div>
+        </div>
+        <div class="see-profile"><%= link_to "View profile", user_path(f), class:"btn btn-primary btn-sm" %></div>
+
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
 

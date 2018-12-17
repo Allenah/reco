@@ -1,3 +1,4 @@
+
 <div class="profile-info">
   <div class="profile-photo">
     <div class="avatar" style="background-image: url('<%= cl_image_path @user.photo %>')"></div>
@@ -9,9 +10,15 @@
         <li><%= image_tag "logo.1.png" %>
         <span class="profile-stat-count"><%= @user.lists.count %></span> Lists</li>
         <li><i class="fas fa-check-square"></i>
-        <span class="profile-stat-count">7</span> Done that's</li>
-        <li><i class="fas fa-bookmark"></i>
-        <span class="profile-stat-count">12</span> Bucket List</li>
+        <span class="profile-stat-count"><%= @likes.count %></span> Done that's</li>
+        <% if @user == current_user %>
+        <li>
+          <%= link_to bookmarks_path do %>
+          <i class="fas fa-bookmark"></i>
+       <span class="profile-stat-count"><%= @bookmarks.count %></span> Bookmarks
+       <% end %>
+     </li>
+     <% end %>
       </ul>
     </div>
   </div>

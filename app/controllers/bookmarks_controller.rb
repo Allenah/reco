@@ -13,4 +13,9 @@ class BookmarksController < ApplicationController
     @bookmark = @user.bookmarks.find_by_item_id(params[:item_id])
     @bookmark.destroy!
   end
+
+  def index
+    @user = current_user
+    @items = Item.joins(:bookmarks).where(bookmarks: { user_id: @user.id })
+  end
 end
