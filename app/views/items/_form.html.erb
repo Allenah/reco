@@ -2,8 +2,9 @@
     <%= f.association :list, collection: List.where(user_id: current_user), include_blank: false %>
     <%= f.input :name, label: "Title", autocomplete: :off %>
     <%= f.input :photo %>
+    <div id="backdrop"></div>
     <%= f.input :photo_cache, as: :hidden %>
-    <%= f.input :description, input_html: {maxlength: 200} %>
+    <%= f.input :description, input_html: { maxlength: 200 } %>
     <%= f.submit "Add item", class: "btn btn-primary" %>
 <% end %>
 

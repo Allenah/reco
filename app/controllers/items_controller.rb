@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
       redirect_to list_path(@list)
     else
       render :new
-      raise
+
     end
   end
 

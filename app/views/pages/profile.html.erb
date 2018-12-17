@@ -1,0 +1,82 @@
+
+<div class="profile-info">
+  <div class="profile-photo">
+    <div class="avatar" style="background-image: url('<%= cl_image_path @user.photo %>')"></div>
+  </div>
+  <div class= "profile-details">
+    <h4><%= @user.first_name  %> <%= @user.last_name%></h4>
+    <div class="profile-stats">
+      <ul class="list-inline">
+        <li><%= image_tag "logo.1.png" %>
+        <span class="profile-stat-count"><%= @user.lists.count %></span> Lists</li>
+        <li><i class="fas fa-check-square"></i>
+        <span class="profile-stat-count">7</span> Done that's</li>
+        <li><i class="fas fa-bookmark"></i>
+        <span class="profile-stat-count">12</span> Bucket List</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="profile-lists">
+<div class="list-type"><h4><i class="fas fa-list"></i> My Lists</h4></div>
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-4"><div class="list-type"><h4>My restaurants</h4></div></div>
+  <% @lists.where(list_type: 'restaurants').each do |l| %>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <%= link_to list_path(l), class: 'link-to-text-color' do %>
+      <div class="restaurant">
+        <div class="restaurant-photo" style="background: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url(<%= l.photo %>) center / cover no-repeat;"></div>
+        <div class="restaurant-info">
+          <div class="restaurant-details">
+            <div class="list-details">
+              <h4><%= l.name %></h4>
+              <p><%= l.items.count %> Re:co's</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="col-xs-12 col-sm-6 col-md-4"><div class="list-type"><h4>My movies</h4></div></div>
+<% @lists.where(list_type: 'movies').each do |l| %>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <%= link_to list_path(l), class: 'link-to-text-color' do %>
+      <div class="restaurant">
+        <div class="restaurant-photo" style="background: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url(<%= l.photo %>) center / cover no-repeat;"></div>
+        <div class="restaurant-info">
+          <div class="restaurant-details">
+            <div class="list-details">
+              <h4><%= l.name %></h4>
+              <p><%= l.items.count %> Re:co's</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="col-xs-12 col-sm-6 col-md-4"><div class="list-type"><h4>My albums</h4></div></div>
+<% @lists.where(list_type: 'albums').each do |l| %>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <%= link_to list_path(l), class: 'link-to-text-color' do %>
+      <div class="restaurant">
+        <div class="restaurant-photo" style="background: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url(<%= l.photo %>) center / cover no-repeat;"></div>
+        <div class="restaurant-info">
+          <div class="restaurant-details">
+            <div class="list-details">
+              <h4><%= l.name %></h4>
+              <p><%= l.items.count %> Re:co's</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+</div>
+
+
+</div>
