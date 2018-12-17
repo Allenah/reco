@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  get 'users/show'
   devise_for :users
+
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :lists do
@@ -13,12 +15,15 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users, only: [:show]
+
+  resources :items, only: [:new, :create]
+  get 'profile', to: 'users#profile'
+  resources :friendships, only: [:index]
+
   resources :items, only: [:new, :create] do
     collection do
       get :autocomplete
     end
   end
-  get 'profile', to: 'pages#profile'
-  resources :friendships, only: [:index, :show]
-
 end
