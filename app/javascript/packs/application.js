@@ -12,8 +12,8 @@ megamodal();
 autocompleteSearch();
 import {horizontalScrollingBanner} from "../components/home";
 horizontalScrollingBanner();
-setUpElements();
-scrollTheBanners();
+// setUpElements();
+// scrollTheBanners();
 
 // classToggle();
 
