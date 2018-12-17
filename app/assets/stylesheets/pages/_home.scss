@@ -8,18 +8,16 @@
 }
 
 :root {
-text-align: center;
   font-size: 16px;
 }
 
 body {
-  background-color: #EFF1ED;
+  background-color: white;
   min-height: 100vh;
 }
 
 h1 {
   &::after {
-    background-color: #00A8E8;
     bottom: 0;
     content: '';
     display: block;
@@ -36,47 +34,53 @@ h1 {
 }
 
 .sample-item-1 {
-  background-color: #62A87C;
-  height: 150px;
-  min-width: 200px;
-  width: 200px;
+
+  height: 250px;
+  min-width: 350px;
+  width: 350px;
 }
 
 .sample-item-2 {
-  background-color: #628EA8;
-  height: 200px;
-  min-width: 150px;
-  width: 150px;
+
+  height: 250px;
+  min-width: 350px;
+  width: 350px;
 }
 
 .sample-item-3 {
-  background-color: #3C3C3C;
-  height: 125px;
-  min-width: 225px;
-  width: 225px;
+
+  height: 250px;
+  min-width: 350px;
+  width: 350px;
+}
+.sample-item-4 {
+
+  height: 250px;
+  min-width: 350px;
+  width: 350px;
+}
+.sample-item-5 {
+
+  height: 250px;
+  min-width: 350px;
+  width: 350px;
 }
 
 // Plugin code below
 
 .horizontal-scrolling-banner {
   overflow: hidden;
+  top: 0;
 }
 
 .horizontal-scrolling-banner__helper-wrapper {
   align-items: center;
   display: flex;
+  top: 0;
   left: 0;
   transform: translateZ(0);
   transition-property: left;
   transition-timing-function: linear;
-}
-
-// h2 {
-//   margin: 20px;
-// }
-
-.browse {
-  margin-top: 10px;
 }
 
 .home-about {
@@ -88,7 +92,6 @@ h1 {
   background-color: white;
   height: 200px;
   margin: 10px;
-  box-shadow:0 2px 5px rgba(0, 0, 0, 0.2);
   h3 {
     margin: 0px;
     padding: 30px 0px;
@@ -102,4 +105,3 @@ h1 {
 };
 }
 
-// Specific CSS for your home-page
