@@ -3,7 +3,13 @@ class ListsController < ApplicationController
     if params[:query].present?
       @lists = List.search_by_tag_and_friend(params[:query])
     else
-      @lists = List.all
+      @follows = Follow.all
+      @lists_followed = @follows.where(user_id: current_user.id)
+      @lists = []
+      @lists_followed.each do |f|
+        @lists << f.list
+      end
+      return @lists
     end
   end
 
