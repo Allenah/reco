@@ -12,7 +12,7 @@ paul = User.create!(
   last_name: "Busby",
   email: "paul.busby@gmail.com",
   password: "secret1",
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544534332/paul_avatar.jpg')
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544534332/paul_avatar.jpg')
   )
 
 carolina = User.create!(
@@ -20,7 +20,7 @@ carolina = User.create!(
   last_name: "Lemos",
   email: "carolina@gmail.com",
   password: "secret2",
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544534322/carolina_avatar.jpg')
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544534322/carolina_avatar.jpg')
   )
 
 allenah = User.create!(
@@ -28,7 +28,7 @@ allenah = User.create!(
   last_name: "Herholdt",
   email: "allenah@gmail.com",
   password: "secret3",
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544534348/allenah_avatar.jpg')
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544534348/allenah_avatar.jpg')
   )
 
 puts 'Creating 2 paul lists...'
@@ -36,7 +36,7 @@ puts 'Creating 2 paul lists...'
 portuguese = List.create!(
   list_type: 'restaurants',
   name: 'Portuguese restaurants in Lisbon',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544542179/portuguese_list.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544542179/portuguese_list.jpg'),
   description: 'Typical portuguese food, with a cool atmosphere, with a nice location',
   user_id: paul.id
   )
@@ -44,7 +44,7 @@ portuguese = List.create!(
 international = List.create!(
   list_type: 'restaurants',
   name: 'International cuisine',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544542480/international_list.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544542480/international_list.jpg'),
   description: 'If you want to try different cuisines from all over the world, at affordable prices',
   user_id: paul.id
   )
@@ -53,71 +53,71 @@ puts 'Creating 10 paul items...'
 
 quimera = Item.create!(
   name: 'Quimera',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544540957/quimera.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544540957/quimera.jpg'),
   description: 'Craft beers and comfort food set inside an ancient Roman tunnel',
   list_id: portuguese.id
   )
 
 ramiro = Item.create!(
   name: 'Ramiro',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544541202/ramiro.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544541202/ramiro.jpg'),
   description: 'Relaxed, casual 3-floor seafood and beer drinking eatery established in the 1950s.',
   list_id: portuguese.id
   )
 
 rio_maravilha = Item.create!(
   name: 'Rio Maravilha',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544541236/rio-maravilha.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544541236/rio-maravilha.jpg'),
   description: 'The rooftop of an old LX Factory building is a striking setting for one of the most gorgeous views of any bar or restaurants in town.',
   list_id: portuguese.id
   )
 
 gin_lovers = Item.create!(
   name: 'Gin Lovers',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544541291/gin%20lovers.jpg'),
-  description: 'A passionate group of gin-loving entrepreneurs opened this cocktail bar dedicated to their favorite drink in an Arab-style palace',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544541291/gin%20lovers.jpg'),
+  description: 'A passionate group of gin-loving entrepreneurs ed this cocktail bar dedicated to their favorite drink in an Arab-style palace',
   list_id: portuguese.id
   )
 
 bonsai = Item.create!(
   name: 'Bonsai',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544541325/bonsai.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544541325/bonsai.jpg'),
   description: 'Sushi, sashimi & other Japanese dishes in a contemporary setting with traditional low tables.',
   list_id: international.id
   )
 
 clandestino = Item.create!(
   name: 'Clandestino',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544541362/clandestino.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544541362/clandestino.jpg'),
   description: 'Some of the best chinese food in hipster, graffiti settings',
   list_id: international.id
   )
 
 chutnify = Item.create!(
   name: 'Chutnify',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544541397/chutnify.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544541397/chutnify.jpg'),
   description: 'Stylish decor and delicious curries in one of the posher parts of town',
   list_id: international.id
   )
 
 moules = Item.create!(
   name: 'Moules & Beer',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544541434/moules.jpg'),
-  description: 'Quality beers and seafood in a bright and open environment',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544541434/moules.jpg'),
+  description: 'Quality beers and seafood in a bright and  environment',
   list_id: international.id
   )
 
 brasserie = Item.create!(
   name: 'La Brasserie',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544541624/brasserie.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544541624/brasserie.jpg'),
   description: 'Steak & frites is the focus of this classically simple bistro, also serving vegetarian options.',
   list_id: international.id
   )
 
 avillez = Item.create!(
   name: 'Bairro do Avillez',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544541659/avillez.jpg'),
-  description: 'Another hit from José Avillez, who recently opened this restaurant complex, designed to look like a typical Portuguese neighborhood.',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544541659/avillez.jpg'),
+  description: 'Another hit from José Avillez, who recently ed this restaurant complex, designed to look like a typical Portuguese neighborhood.',
   list_id: portuguese.id
   )
 
@@ -254,7 +254,7 @@ puts 'Creating 3 allenah restaurants lists...'
 brunch_restaurants = List.create!(
   list_type: 'restaurants',
   name: 'Brunch spots in Lisbon',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694252/brunch.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694252/brunch.jpg'),
   description: 'The best brunch places to go with friends during the weekend, with great food. And they will all look awesome on your instagram!',
   user_id: allenah.id
   )
@@ -262,7 +262,7 @@ brunch_restaurants = List.create!(
 vegan_restaurants = List.create!(
   list_type: 'restaurants',
   name: 'Restaurants for veggie lovers',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694290/vegan.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694290/vegan.jpg'),
   description: 'Vegetarian restaurants with quality products and tasty dishes. Veggie food can be really tasty!',
   user_id: allenah.id
   )
@@ -270,7 +270,7 @@ vegan_restaurants = List.create!(
 italian_restaurants = List.create!(
   list_type: 'restaurants',
   name: 'The best Italian cuisine',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694323/italian.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694323/italian.jpg'),
   description: 'When you’re craving for crusty pizzas, for freshly made pasta, or for a break from the Portuguese traditional food, these are the best Italian restaurants in Lisbon.',
   user_id: allenah.id
   )
@@ -279,49 +279,49 @@ puts 'Creating 7 allenah restaurants items...'
 
 zenith = Item.create!(
   name: 'Zenith',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694354/zenith.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694354/zenith.jpg'),
   description: 'The food is delicious, especially the pancakes and the sweet potato toast with avocado. And the brunch menu is available every day.',
   list_id: brunch_restaurants.id
   )
 
 amelia  = Item.create!(
   name: 'Amelia',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694389/amelia.png'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694389/amelia.png'),
   description: 'Tasty and healthy food, in a really cool location! I recommend the waffles and the acai bowl.',
   list_id: brunch_restaurants.id
   )
 
 heim  = Item.create!(
   name: 'Heim cafe',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694421/heim.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694421/heim.jpg'),
   description: 'The place has become so popular that weekend lines are unavoidable. Don’t give up, because all three of their brunch options are delicious.',
   list_id: brunch_restaurants.id
   )
 
 boulangerie  = Item.create!(
   name: 'Boulangerie',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694462/boulangerie.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694462/boulangerie.jpg'),
   description: 'The brunch menu offers some of the best freshly baked croissants I have ever tasted. You have to try it!',
   list_id: brunch_restaurants.id
   )
 
 topo  = Item.create!(
   name: 'Topo',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694494/topo.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694494/topo.jpg'),
   description: 'If you want to enjoy a tasty brunch with a great view, this is the place to go to!',
   list_id: brunch_restaurants.id
   )
 
 psi = Item.create!(
   name: 'Psi Vegetariano',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694523/psi.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694523/psi.jpg'),
   description: 'Wide-ranging array of veggie dishes in a relaxed restaurant with a lakeside terrace in lush gardens.',
   list_id: vegan_restaurants.id
   )
 
 mercantina = Item.create!(
   name: 'Mercantina',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694552/mercantina.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694552/mercantina.jpg'),
   description: 'It brings to the table the Neapolitan tradition – fluffier dough, thick on the edges, damp in the middle. A pizzeria with a super-deluxe oven custom-made in Napoli.',
   list_id: italian_restaurants.id
   )
@@ -449,7 +449,7 @@ puts 'Creating 3 allenah movies lists...'
 thriller_movies = List.create!(
   list_type: 'movies',
   name: 'Best Thrillers Ever',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544695763/thriller.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544695763/thriller.jpg'),
   description: 'This list contains the best thriller movies of all time. A thrilling list to get the adrenaline flowing!',
   user_id: allenah.id
   )
@@ -457,7 +457,7 @@ thriller_movies = List.create!(
 comedy_movies = List.create!(
   list_type: 'movies',
   name: 'Just a few of my Favourite Comedies',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544695787/comedy.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544695787/comedy.jpg'),
   description: 'In this list I focus on the comedy part of my favourite movies, because I love to laugh . . . ok giggle!',
   user_id: allenah.id
   )
@@ -465,7 +465,7 @@ comedy_movies = List.create!(
 christmas_movies = List.create!(
   list_type: 'movies',
   name: 'Favourite Christmas Classics',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544695808/christmas.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544695808/christmas.jpg'),
   description: 'This list contains the best christmas movies of all time!',
   user_id: allenah.id
   )
@@ -474,63 +474,63 @@ puts 'Creating 9 allenah movies items...'
 
 silence = Item.create!(
   name: 'The Silence of the Lambs',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544695763/thriller.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544695763/thriller.jpg'),
   description: 'The plot is simply genius. Jodie Foster gives a stellar performance as the trainee agent and Anthony Hopkins is  beyond excellence and comparison  in his portrayal of Hannibal Lecter. Do not miss it!',
   list_id: thriller_movies.id
   )
 
 seven = Item.create!(
   name: 'Seven',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544695899/seven.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544695899/seven.jpg'),
   description: 'Even though the ending of the movie is quite predictable, the storyline is so gripping that you get yourself into the movie till the end.Great acting by Brad Pitt,Kevin Spacey and Morgan Freeman.',
   list_id: thriller_movies.id
   )
 
 dodgeball = Item.create!(
   name: 'Dodgeball',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544695924/dodgeball.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544695924/dodgeball.jpg'),
   description: 'If you can dodge a wrench, you can dodge a ball. If you are looking for 92 minutes of mindless fun and countless quotable moments...this has everything you are looking for.',
   list_id: comedy_movies.id
   )
 
 anger = Item.create!(
   name: 'Anger Management',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544695951/anger.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544695951/anger.jpg'),
   description: 'I thought the movie was hilarious if I am honest..I do believe you need to have a wacky sense of humour to laugh at the script etc but I just found that Sandler actually played the part very well and his co stars in the anger management group were excellent.',
   list_id: comedy_movies.id
   )
 
 home_alone = Item.create!(
   name: 'Home Alone',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544695990/homealone.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544695990/homealone.jpg'),
   description: 'I love this movie and it is one of my favourites around the holidays. It is a holiday classic that everyone should watch and enjoy.',
   list_id: christmas_movies.id
   )
 
 miracle = Item.create!(
   name: 'Miracle on 34th Street',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544696020/miracle.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544696020/miracle.jpg'),
   description: 'If you are after an entirely pleasant, inoffensive, feel-good movie at Christmas, this is it: the kind of innocent, utterly charming, hanky-ringing fare that they are not supposed to be making any more.',
   list_id: christmas_movies.id
   )
 
 love_actually = Item.create!(
   name: 'Love Actually',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544696048/loveactually.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544696048/loveactually.jpg'),
   description: '"Love actually" may not be true but the happiness in it is truly grandiose, after all is not happiness the only true purpose of life. Merry Christmas and a happy new year.. 🍻 cheers..!!',
   list_id: christmas_movies.id
   )
 
 holiday = Item.create!(
   name: 'The Holiday',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544696086/holiday.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544696086/holiday.jpg'),
   description: 'Perfect dreamy Christmas holiday movie…. A beautiful portrayal of unexpected relationships and amazing performances makes this movie worth a watch. You should definitely go on this holiday!',
   list_id: christmas_movies.id
   )
 
 grinch = Item.create!(
   name: 'The Grinch',
-  photo: open('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544696116/grinch.jpg'),
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544696116/grinch.jpg'),
   description: 'This movie expands the story of "How The Grinch Stole Christmas" with a backstory and a good understanding of what is happening down in Who-Ville. Jim Carrey plays the role as Grinch perfectly and makes the movie seem whole. Your heart will grow three sizes.',
   list_id: christmas_movies.id
   )
@@ -714,4 +714,436 @@ friendship3 = Friendship.create!(
 
 puts 'Finished adding friendships!'
 
+puts 'Creating 12 users...'
+
+benjamin = User.create!(
+  first_name: "Benjamin",
+  last_name: "Dunisch",
+  email: "benjamin@gmail.com",
+  password: "secret",
+  remote_photo_url:'https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544959802/benjamin.jpg'
+  )
+
+carlotta = User.create!(
+  first_name: "Carlotta",
+  last_name: "Schaffner",
+  email: "carlotta@gmail.com",
+  password: "secret",
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544959938/carlotta.jpg')
+  )
+
+chris = User.create!(
+  first_name: "Chris",
+  last_name: "Sisserian",
+  email: "chris@gmail.com",
+  password: "secret",
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544960936/chris.jpg')
+  )
+
+clelia = User.create!(
+  first_name: "Clélia",
+  last_name: "Sapriel",
+  email: "clelia@gmail.com",
+  password: "secret",
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544960660/clelia.jpg')
+  )
+
+ines = User.create!(
+  first_name: "Ines",
+  last_name: "Salgueiro",
+  email: "ines@gmail.com",
+  password: "secret",
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544960752/ines.jpg')
+  )
+
+jami = User.create!(
+  first_name: "Jami",
+  last_name: "Owen",
+  email: "jami@gmail.com",
+  password: "secret",
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544960018/jami.jpg')
+  )
+
+manuel = User.create!(
+  first_name: "Manuel",
+  last_name: "Sousa",
+  email: "manuel@gmail.com",
+  password: "secret",
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544960097/manuel.jpg')
+  )
+
+mathilde = User.create!(
+  first_name: "Mathilde",
+  last_name: "Bergue",
+  email: "mathilde@gmail.com",
+  password: "secret",
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544960179/mathilde.jpg')
+  )
+
+nick = User.create!(
+  first_name: "Nick",
+  last_name: "Petzold",
+  email: "nick@gmail.com",
+  password: "secret",
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544960274/nick.jpg')
+  )
+
+ruben = User.create!(
+  first_name: "Ruben",
+  last_name: "Dias",
+  email: "ruben@gmail.com",
+  password: "secret",
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544960453/ruben.jpg')
+  )
+
+thomas = User.create!(
+  first_name: "Thomas",
+  last_name: "Singell",
+  email: "thomas@gmail.com",
+  password: "secret",
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544960499/thomas.jpg')
+  )
+
+vasco = User.create!(
+  first_name: "Vasco",
+  last_name: "Figueiredo",
+  email: "vasco@gmail.com",
+  password: "secret",
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544960579/vasco.jpg')
+  )
+
+puts 'Creating 12 friendships...'
+
+friendship4 = Friendship.create!(
+  user_id: paul.id,
+  friend_id: benjamin.id
+  )
+
+friendship5 = Friendship.create!(
+  user_id: paul.id,
+  friend_id: carlotta.id
+  )
+
+friendship6 = Friendship.create!(
+  user_id: paul.id,
+  friend_id: chris.id
+  )
+
+friendship7 = Friendship.create!(
+  user_id: paul.id,
+  friend_id: clelia.id
+  )
+
+friendship8 = Friendship.create!(
+  user_id: paul.id,
+  friend_id: ines.id
+  )
+
+friendship9 = Friendship.create!(
+  user_id: paul.id,
+  friend_id: jami.id
+  )
+
+friendship10 = Friendship.create!(
+  user_id: paul.id,
+  friend_id: manuel.id
+  )
+
+friendship11 = Friendship.create!(
+  user_id: paul.id,
+  friend_id: mathilde.id
+  )
+
+friendship12 = Friendship.create!(
+  user_id: paul.id,
+  friend_id: nick.id
+  )
+
+friendship13 = Friendship.create!(
+  user_id: paul.id,
+  friend_id: ruben.id
+  )
+
+friendship14 = Friendship.create!(
+  user_id: paul.id,
+  friend_id: thomas.id
+  )
+
+friendship15 = Friendship.create!(
+  user_id: paul.id,
+  friend_id: vasco.id
+  )
+
+puts 'Creating 2 paul movies lists...'
+
+pixar_movies = List.create!(
+  list_type: 'movies',
+  name: 'Best Pixar movies',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544962749/pixar.png'),
+  description: 'These are my favorite Pixar movies of all times.',
+  user_id: paul.id
+  )
+
+action_movies = List.create!(
+  list_type: 'movies',
+  name: 'Action movies',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544970268/action.jpg'),
+  description: 'There are so many great action films it is hard to name them all, but for me these are pretty hard to beat',
+  user_id: paul.id
+  )
+
+puts 'Creating 6 paul movies items...'
+
+toy_story = Item.create!(
+  name: 'Toy Story',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544970405/toystory.jpg'),
+  description: 'It’s a landmark movie, and doesn’t get old with frequent repetition. Definitely one of my favourite movies!',
+  list_id: pixar_movies.id
+  )
+
+nemo = Item.create!(
+  name: 'Finding Nemo',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544970667/nemo.jpg'),
+  description: 'Pixar took things back to basics for 2003’s Finding Nemo, following the adventures of a single father and his brain-damaged acquaintance as they desperately search for his kidnapped son.',
+  list_id: pixar_movies.id
+  )
+
+incredibles = Item.create!(
+  name: 'The Incredibles',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544971245/incredibles.jpg'),
+  description: 'Bringing tons of fun to the animated superhero genre, The Incredibles easily lives up to its name.',
+  list_id: pixar_movies.id
+  )
+
+die_hard = Item.create!(
+  name: 'Die Hard',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544971937/diehard.jpg'),
+  description: 'It´s many imitators (and sequels) have never come close to matching the taut thrills of the definitive holiday action classic.',
+  list_id: action_movies.id
+  )
+
+matrix = Item.create!(
+  name: 'The Matrx',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544972082/matrix.jpg'),
+  description: 'The Matrix is a smartly crafted combination of spectacular action and groundbreaking special effects.',
+  list_id: action_movies.id
+  )
+
+casino = Item.create!(
+  name: 'Casino Royale',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544972573/casino.jpg'),
+  description: 'This great movie with Daniel Craig is a caustic, haunted, intense reinvention of 007.',
+  list_id: action_movies.id
+  )
+
+puts 'Creating 6 movies tags...'
+
+pixar = Tag.create!(
+  name: '#pixar'
+  )
+
+animation = Tag.create!(
+  name: '#animation'
+  )
+
+findingnemo = Tag.create!(
+  name: '#findingnemo'
+  )
+
+theincredibles = Tag.create!(
+  name: '#theincredibles'
+  )
+
+adventure = Tag.create!(
+  name: '#adventure'
+  )
+
+suspense = Tag.create!(
+  name: '#suspense'
+  )
+
+puts 'Creating 7 paul movies lists tags...'
+
+pixar1 = ListTag.create!(
+  list_id: pixar_movies.id,
+  tag_id: pixar.id
+  )
+
+animation1 = ListTag.create!(
+  list_id: pixar_movies.id,
+  tag_id: animation.id
+  )
+
+findingnemo1 = ListTag.create!(
+  list_id: pixar_movies.id,
+  tag_id: findingnemo.id
+  )
+
+theincredibles1 = ListTag.create!(
+  list_id: pixar_movies.id,
+  tag_id: theincredibles.id
+  )
+
+
+action2 = ListTag.create!(
+  list_id: action_movies.id,
+  tag_id: action.id
+  )
+
+adventure1 = ListTag.create!(
+  list_id: action_movies.id,
+  tag_id: adventure.id
+  )
+
+suspense1 = ListTag.create!(
+  list_id: action_movies.id,
+  tag_id: suspense.id
+  )
+
+puts 'Creating 2 albums lists...'
+
+reggae_albums = List.create!(
+  list_type: 'albums',
+  name: '5 Albums That Changed Reggae History',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544975922/reggae.jpg'),
+  description: 'These albums paved the way for modern day reggae. These ska pioneers are from the early 60s and 70s. If you are interested in learning more about reggae, this is the perfect place to start!',
+  user_id: allenah.id
+  )
+
+jazz_albums = List.create!(
+  list_type: 'albums',
+  name: 'Best Jazz Pianists of All Time',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544977282/jazz.jpg'),
+  description: 'Strings or percussion? How about the best of both worlds? The piano is one of the coolest instruments out there, and these jazz artists have learned how to master their craft. Take a listen!',
+  user_id: paul.id
+  )
+
+puts 'Creating 10 albums lists items...'
+
+funky_kingston = Item.create!(
+  name: 'Funky Kingston',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544976114/funkykingston.png'),
+  description: 'It ramps the soul side of Toots And The Maytals sound for one of the most uplifting albums of all time.',
+  list_id: reggae_albums.id
+  )
+
+suzanne = Item.create!(
+  name: 'Suzanne Beware of the Devil',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544976210/suzanne.png'),
+  description: 'This is an awesome album of Dandy Livingstone!',
+  list_id: reggae_albums.id
+  )
+
+shanty = Item.create!(
+  name: '007 Shanty Town',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544976716/shanty.png'),
+  description: 'The first album of Desmond Dekker is great!',
+  list_id: reggae_albums.id
+  )
+
+jimmy = Item.create!(
+  name: 'The Harder They Come',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544977016/jimmy.png'),
+  description: 'This is an awesome album of the reggae legend Jimmy Cliff',
+  list_id: reggae_albums.id
+  )
+
+marley = Item.create!(
+  name: 'Catch a fire',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544977115/marley.png'),
+  description: 'Bob Marley´s album Catch a Fire changed the reggae scene forever',
+  list_id: reggae_albums.id
+  )
+
+peterson = Item.create!(
+  name: 'Night Train',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544977442/peterson.png'),
+  description: 'This is a great album from Oscar Peterson, the best Canada´s legendary jazz pianist!',
+  list_id: jazz_albums.id
+  )
+
+chick = Item.create!(
+  name: 'Return to forever, light as a feather',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544977521/chick.png'),
+  description: 'The legendary first lineup of Chick Corea´s fusion band Return to Forever debuted on this classic album',
+  list_id: jazz_albums.id
+  )
+
+herbie = Item.create!(
+  name: 'Headhunters',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544977618/herbie.png'),
+  description: 'Head Hunters remains as one of the most sought after, influential jazz recordings ever created. Herbie Hancock is the best!',
+  list_id: jazz_albums.id
+  )
+
+monk = Item.create!(
+  name: 'Monk’s Dream',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544977723/monk.png'),
+  description: 'While Monk’s Dream was not a turning point in the career of Thelonious Monk, it was a turning point in the acceptance of his work.',
+  list_id: jazz_albums.id
+  )
+
+vince = Item.create!(
+  name: 'A Charlie Brown Christmas',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544977790/vince.png'),
+  description: 'Vince Guaraldi innovative compositions and arrangements are great!',
+  list_id: jazz_albums.id
+  )
+
+puts 'Creating 6 albums tags...'
+
+reggae = Tag.create!(
+  name: '#reggae'
+  )
+
+bobmarley = Tag.create!(
+  name: '#bobmarley'
+  )
+
+jimmycliff = Tag.create!(
+  name: '#jimmycliff'
+  )
+
+jazz = Tag.create!(
+  name: '#jazz'
+  )
+
+pianist = Tag.create!(
+  name: '#pianist'
+  )
+monk = Tag.create!(
+  name: '#monk'
+  )
+
+puts 'Creating 6 albums lists tags...'
+
+reggae1 = ListTag.create!(
+  list_id: reggae_albums.id,
+  tag_id: reggae.id
+  )
+
+bobmarley1 = ListTag.create!(
+  list_id: reggae_albums.id,
+  tag_id: bobmarley.id
+  )
+
+jimmycliff1 = ListTag.create!(
+  list_id: reggae_albums.id,
+  tag_id: jimmycliff.id
+  )
+
+jazz1 = ListTag.create!(
+  list_id: jazz_albums.id,
+  tag_id: jazz.id
+  )
+
+pianist1 = ListTag.create!(
+  list_id: jazz_albums.id,
+  tag_id: pianist.id
+  )
+
+monk1 = ListTag.create!(
+  list_id: jazz_albums.id,
+  tag_id: monk.id
+  )
 puts 'Finished seeds'
