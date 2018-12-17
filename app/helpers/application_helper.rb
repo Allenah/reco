@@ -25,6 +25,6 @@ module ApplicationHelper
   end
 
   def profile_page?
-    current_page?(controller: 'pages', action: 'profile')
+    current_page?(controller: 'users', action: 'profile')
   end
 end
