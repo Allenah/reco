@@ -1,8 +1,8 @@
 <div class="footer">
   <div class="footer-links">
-    <div><%= link_to "", lists_path, class: "fas fa-home"%></div>
-    <div><%= link_to "", friendships_path, class: "fas fa-users"%></div>
-    <div><a href="#/"><i class="far fa-plus-square" id="modal-add"></i></a></div>
-    <div><%= link_to "", profile_path, class: "fas fa-user-alt"%></div>
+    <div><%= link_to "", lists_path, class: "#{'active' if footer_link_active?('home') } fas fa-home"%></div>
+    <div><%= link_to "", friendships_path, class: "#{'active' if footer_link_active?('friends') } fas fa-users"%></div>
+    <div><a href="#/" class="<%= 'active' if footer_link_active?('add') %>"><i class=" far fa-plus-square" id="modal-add"></i></a></div>
+    <div><%= link_to "", profile_path, class: "#{'active' if footer_link_active?('profile') } fas fa-user-alt"%></div>
   </div>
 </div>

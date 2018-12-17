@@ -10,9 +10,9 @@ import {megamodal} from '../components/modal';
 select();
 megamodal();
 // autocompleteSearch();
-// import {horizontalScrollingBanner} from "../components/home";
-// horizontalScrollingBanner();
-// // setUpElements();
-// scrollTheBanners();
+import {horizontalScrollingBanner} from "../components/home";
+horizontalScrollingBanner();
+setUpElements();
+scrollTheBanners();
 // classToggle();
 
