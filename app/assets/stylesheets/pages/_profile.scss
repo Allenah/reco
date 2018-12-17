@@ -23,13 +23,20 @@
   margin-bottom: 3px;
 }
 
+.profile-stats a {
+  color: #6F6F6F;
+}
+
 .profile-stat-count {
   color: $my-green;
   font-weight: bold;
 }
 
-.profile-details h4 {
+.profile-details {
+h4 {
   font-weight: bold;
+}
+  text-align: center;
 }
 
 .list-details {

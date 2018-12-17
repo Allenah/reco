@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :lists do
     resources :follows, only: [:create, :destroy]
     resources :listtags, only: [:create]
-    resources :bookmarks, only: [:index]
     resources :items, only: [:index, :destroy, :update, :edit] do
       resources :bookmarks, only: [:create, :destroy]
       resources :likes, only: [:create, :destroy]
@@ -15,6 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :bookmarks, only: [:index]
   resources :users, only: [:show]
 
   resources :items, only: [:new, :create]

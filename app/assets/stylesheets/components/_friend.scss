@@ -1,5 +1,5 @@
 .friends {
-  padding-left: 15px;
+  padding: 0px 15px;
   h4 {
   margin-top: 15px;
   margin-bottom: 0px;
@@ -15,6 +15,7 @@
 .friend-body {
   padding-left: 10px;
   text-align: left;
+  min-width: 50vw;
   p {
     font-size: 16px;
     margin-bottom: 5px;
@@ -28,5 +29,5 @@
 }
 
 .see-profile {
-
+  text-align: right;
 }
