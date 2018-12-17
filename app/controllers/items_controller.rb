@@ -3,9 +3,6 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    # @items = Item.pluck(:name).sort
-    # results = AutocompleteSearchService.new(params[:q]).call
-    # render json: results
   end
 
   def create
@@ -16,7 +13,6 @@ class ItemsController < ApplicationController
       redirect_to list_path(@list)
     else
       render :new
-
     end
   end
 
@@ -46,6 +42,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :photo, :description, :list_id)
+    params.require(:item).permit(:name, :photo, :remote_photo, :description, :list_id)
   end
 end
