@@ -21,7 +21,7 @@
 
               <div class="comment-container collapse" id="<%="collapse#{i.id}" %>">
                 <%= simple_form_for [@list, i, @comment] do |f| %>
-                <%= f.input :description %>
+                <%= f.input :description, label: false, placeholder: "Write your comment here..." %>
                 <%= f.submit "Add Comment", class: "btn btn-primary btn-sm" %>
                 <% end %>
                 <% i.comments.each do |c| %>
