@@ -38,10 +38,10 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  # def autocomplete
-  #   results = AutocompleteSearchService.new(params[:q]).call
-  #   render json: results
-  # end
+  def autocomplete
+    results = AutocompleteSearchService.new(params[:q]).call
+    render json: results
+  end
 
   private
 

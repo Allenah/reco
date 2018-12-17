@@ -7,8 +7,7 @@ class Item < ApplicationRecord
   validates :name, :photo, :description, presence: true
   mount_uploader :photo, PhotoUploader
 
-  # def self.find_by_name(name)
-  #   Item.where('name ILIKE ?', "%#{name}%")
-  # end
-
+  def self.find_by_name(name)
+    Item.where('name ILIKE ?', "%#{name}%")
+  end
 end

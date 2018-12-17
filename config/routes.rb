@@ -13,7 +13,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items, only: [:new, :create]
+  resources :items, only: [:new, :create] do
+    collection do
+      get :autocomplete
+    end
+  end
   get 'profile', to: 'pages#profile'
   resources :friendships, only: [:index, :show]
 
