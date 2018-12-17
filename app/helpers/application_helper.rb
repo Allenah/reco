@@ -1,5 +1,6 @@
 module ApplicationHelper
   def footer_link_active?(icon)
+    return if devise_controller?
     case icon
     when 'home'
       home_page?
