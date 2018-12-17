@@ -21,4 +21,9 @@ Rails.application.routes.draw do
   get 'profile', to: 'users#profile'
   resources :friendships, only: [:index]
 
+  resources :items, only: [:new, :create] do
+    collection do
+      get :autocomplete
+    end
+  end
 end
