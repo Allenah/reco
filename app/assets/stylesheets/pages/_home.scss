@@ -1,70 +1,69 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  // box-sizing: border-box;
   margin: 0;
   padding: 0;
   position: relative;
 }
 
-:root {
-  font-size: 16px;
-}
+// :root {
+//   font-size: 16px;
+// }
 
-body {
-  background-color: white;
-  min-height: 100vh;
-}
+// // body {
+//   min-height: 100vh;
+// }
 
-h1 {
-  &::after {
-    bottom: 0;
-    content: '';
-    display: block;
-    height: 0.25rem;
-    position: absolute;
-    width: 1rem;
-  }
-}
+// h1 {
+//   &::after {
+//     bottom: 0;
+//     content: '';
+//     display: block;
+//     height: 0.25rem;
+//     position: absolute;
+//     width: 1rem;
+//   }
+// }
 
-.container {
-  margin: 0 auto 2rem;
-  max-width: 900px;
-  padding: 0 1.5rem;
-}
+// .container {
+//   margin: 0 auto 2rem;
+//   max-width: 900px;
+//   padding: 0 1.5rem;
+// }
 
-.sample-item-1 {
+//.sample-item-1 {
 
-  height: 250px;
-  min-width: 350px;
-  width: 350px;
-}
+//   height: 250px;
+//   min-width: 350px;
+//   width: 350px;
+// }
 
-.sample-item-2 {
+// .sample-item-2 {
 
-  height: 250px;
-  min-width: 350px;
-  width: 350px;
-}
+//   height: 250px;
+//   min-width: 350px;
+//   width: 350px;
+// }
 
-.sample-item-3 {
+// .sample-item-3 {
 
-  height: 250px;
-  min-width: 350px;
-  width: 350px;
-}
-.sample-item-4 {
+//   height: 250px;
+//   min-width: 350px;
+//   width: 350px;
+// }
+// .sample-item-4 {
 
-  height: 250px;
-  min-width: 350px;
-  width: 350px;
-}
-.sample-item-5 {
+//   height: 250px;
+//   min-width: 350px;
+//   width: 350px;
+// }
+// .sample-item-5 {
 
-  height: 250px;
-  min-width: 350px;
-  width: 350px;
-}
+//   height: 250px;
+//   min-width: 350px;
+//   width: 350px;
+// }
 
 // Plugin code below
 
@@ -78,9 +77,9 @@ h1 {
   display: flex;
   top: 0;
   left: 0;
-  transform: translateZ(0);
-  transition-property: left;
-  transition-timing-function: linear;
+  // transform: translateZ(0);
+  // transition-property: left;
+  // transition-timing-function: linear;
 }
 
 .home-about {
