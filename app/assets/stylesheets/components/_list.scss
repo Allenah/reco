@@ -7,14 +7,18 @@
 }
 
 .list-title {
- display: inline-block;
+ display: flex;
+ align-items: top;
+ a {
+  margin-left: 10px;
+ }
 }
 
 .list-title h3 {
   margin-bottom: 10px;
   margin-top: 0px;
-  display: inline-block;
   font-weight: bold;
+  min-width: 75%;
 }
 
 .follow-btn-container {
@@ -25,8 +29,8 @@
   background-color: white;
   color: $my-green;
   border: solid 1px $my-green;
-  font-size: 10px;
-  padding: 5px 10px;
+  font-size: 12px;
+  padding: 10px;
   line-height: 5px;
   border-radius: 5px;
 }
@@ -34,8 +38,8 @@
 .unfollow-btn {
   background-color: $my-green;
   color: white;
-  font-size: 10px;
-  padding: 5px 10px;
+  font-size: 12px;
+  padding: 10px;
   line-height: 5px;
   border-radius: 5px;
 }

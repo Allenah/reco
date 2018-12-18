@@ -27,7 +27,7 @@
   <div class="list-type"><h4><i class="fas fa-list"></i> My Lists</h4></div>
   <div class="row">
   <% if @lists.any?{|list| list.list_type == 'restaurants'} %>
-    <div class="col-xs-12"><div class="list-type"><h4>My restaurants</h4></div></div>
+    <div class="col-xs-12"><div class="list-type"><h4><i class="fas fa-utensils"></i> Restaurants</h4></div></div>
     <div class="scroll-area">
       <div class="scroll">
         <div class="inner-scroll">
@@ -55,7 +55,7 @@
     </div>
   <% end %>
   <% if @lists.any?{|list| list.list_type == 'movies'} %>
-    <div class="col-xs-12"><div class="list-type"><h4>My movies</h4></div></div>
+    <div class="col-xs-12"><div class="list-type"><h4><i class="fas fa-video"></i> Movies</h4></div></div>
     <div class="scroll-area">
       <div class="scroll">
         <div class="inner-scroll">
@@ -83,7 +83,7 @@
     </div>
   <% end %>
   <% if @lists.any?{|list| list.list_type == 'albums'} %>
-    <div class="col-xs-12"><div class="list-type"><h4>My albums</h4></div></div>
+    <div class="col-xs-12"><div class="list-type"><h4><i class="fas fa-music"></i> Albums</h4></div></div>
     <div class="scroll-area">
         <div class="scroll">
           <div class="inner-scroll">
