@@ -1,5 +1,8 @@
 $('div#bm_<%=@item.id%>').html('<%= j render partial: "buttonbookmarks", locals: {item: @item} %>');
 $('div#bm_<%=@item.id%>').removeClass('liked');
+$('div#remove_<%=@item.id%>').remove();
+// $('span#update_count').load("bookmarks/index.html.erb");
+
 
 
 
