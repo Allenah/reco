@@ -49,9 +49,9 @@ const autocompleteSearch = function() {
           // data.items.forEach((item) => {
           //   matches.push({type: 'item', name: item });
           // });
-          data.restaurants.forEach((restaurant) => {
-            matches.push($.extend({ type: 'restaurant', name: restaurant.terms[0]["value"] }, restaurant));
-          });
+          // data.restaurants.forEach((restaurant) => {
+          //   matches.push($.extend({ type: 'restaurant', name: restaurant.terms[0]["value"] }, restaurant));
+          // });
           data.movies.forEach((movie) => {
             matches.push($.extend({ type: 'movie', name: movie.title, photo: `http://image.tmdb.org/t/p/w780${movie.backdrop_path}` }, movie));
           });
