@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   resources :bookmarks, only: [:index]
   resources :users, only: [:show]
 
-  resources :items, only: [:new, :create]
   get 'profile', to: 'users#profile'
   resources :friendships, only: [:index]
 

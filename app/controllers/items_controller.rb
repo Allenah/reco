@@ -30,6 +30,7 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @list = List.find(params[:list_id])
   end
 
   def autocomplete
