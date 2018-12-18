@@ -1,7 +1,7 @@
 class AutocompleteSearchService
   # include HTTParty
   # base_uri "https://api.github.com/"
-  require 'lastfm'
+  require 'rspotify'
 
   def initialize(term)
     @term = term
@@ -9,8 +9,9 @@ class AutocompleteSearchService
 
   def call
     # { restaurants: restaurants, movies: movies }
-      # { movies: movies, albums: albums }
-      { movies: movies }
+      { movies: movies, albums: albums, restaurants: restaurants }
+      # { movies: movies }
+      # { albums: albums }
     # { users: users, items: items }
     # { restaurants: restaurants }
   end
@@ -28,10 +29,10 @@ class AutocompleteSearchService
         radius: 20000000,
         types: 'establishment',
         language: I18n.locale,
-        componentRestrictions: {country: 'pt'}
     )
-    results.map { |m| m.terms[0]["value"] }.take(5)
-    # results.first.terms[0]["value"]
+    results.take(3)
+    # results.map { |m| m.terms[0]["value"] }.take(5)
+    # # results.first.terms[0]["value"]
   end
 
   def movies
@@ -41,17 +42,15 @@ class AutocompleteSearchService
     search = Tmdb::Search.new.query(@term)
     results = search.fetch
     puts results.inspect
-    results.take(5)
+    results.take(3)
 
     # @movie = Tmdb::Movie.images(22855)
   end
 
   def albums
-    lastfm = Lastfm.new(ENV['LASTFM_API_KEY'], ['LASTFM_API_SECRET'])
-    search = lastfm.album.search(@term)
-    results = search["results"]["albummatches"]["album"]
-    puts results.inspect
-    results.take(5)
+    RSpotify.authenticate(ENV['SPOTIFY_API_ID'], ENV['SPOTIFY_API_SECRET'])
+    albums = RSpotify::Album.search(@term)
+    albums.take(3)
   end
 
   def users
@@ -63,3 +62,4 @@ class AutocompleteSearchService
     Item.find_by_name(@term).map(&:name).take(5)
   end
 end
+
