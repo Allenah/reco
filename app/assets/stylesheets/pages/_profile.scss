@@ -39,10 +39,10 @@ li {
 }
 
 .profile-details {
-h4 {
-  font-weight: bold;
-}
   text-align: center;
+  h4 {
+  font-weight: bold;
+  }
 }
 
 .list-details {
@@ -53,8 +53,12 @@ h4 {
     margin: 5px 0px;
   }
   p {
-    font-size: 18px;
-    margin: 0px;
+    font-size: 16px;
+    margin-top: 10px
+  }
+  img {
+    height: 15px;
+    margin-bottom: 3px;
   }
 }
 
