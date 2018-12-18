@@ -4,7 +4,7 @@
   background: white;
   transition: all 0.3s ease;
   height: 50px;
-  padding: 0px 30px;
+  padding: 0px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,7 +32,7 @@
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 /* Navbar link */
@@ -41,7 +41,8 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: $my-green;
+  border-color: $my-green;
   text-decoration: none;
 }
 
@@ -74,4 +75,10 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.navbar-signup {
+  padding: 4px;
+  border: 1px solid $my-light-gray;
+  border-radius: 4px;
 }
