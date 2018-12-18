@@ -16,6 +16,6 @@ class BookmarksController < ApplicationController
 
   def index
     @user = current_user
-    @items = Item.joins(:bookmarks).where(bookmarks: { user_id: @user.id })
+    @items = Item.joins(:bookmarks).where(bookmarks: { user_id: @user.id }).order('bookmarks.created_at').reverse
   end
 end
