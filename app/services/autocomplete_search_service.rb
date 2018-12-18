@@ -1,6 +1,7 @@
 class AutocompleteSearchService
-  include HTTParty
-  base_uri "https://api.github.com/"
+  # include HTTParty
+  # base_uri "https://api.github.com/"
+  require 'lastfm'
 
   def initialize(term)
     @term = term
@@ -8,6 +9,7 @@ class AutocompleteSearchService
 
   def call
     # { restaurants: restaurants, movies: movies }
+      # { movies: movies, albums: albums }
       { movies: movies }
     # { users: users, items: items }
     # { restaurants: restaurants }
@@ -42,6 +44,14 @@ class AutocompleteSearchService
     results.take(5)
 
     # @movie = Tmdb::Movie.images(22855)
+  end
+
+  def albums
+    lastfm = Lastfm.new(ENV['LASTFM_API_KEY'], ['LASTFM_API_SECRET'])
+    search = lastfm.album.search(@term)
+    results = search["results"]["albummatches"]["album"]
+    puts results.inspect
+    results.take(5)
   end
 
   def users

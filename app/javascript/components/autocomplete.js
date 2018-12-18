@@ -7,6 +7,9 @@ const renderItem = function (item) {
     } else if (item.type === 'movie') {
       icon = '<i class="fas fa-video"></i>';
     }
+    else if (item.type === 'album') {
+          icon = '<i class="fas fa-music"></i>';
+        }
     return `<div class="autocomplete-suggestion" data-title="${item.title}" data-image="${item.backdrop_path}">${icon}<span>${item.title}</span></div>`
 };
 
@@ -18,9 +21,7 @@ const handleSelect = function(_e, _term, item) {
   // posterPreview.insertAdjacentHTML('beforeend', `<img src="http://image.tmdb.org/t/p/w780${item.dataset.image}">`);
   posterPreview.innerHTML = `<img src="http://image.tmdb.org/t/p/w780${item.dataset.image}">`;
   const remotePhoto = document.getElementById("item_remote_photo");
-  console.log(remotePhoto);
   remotePhoto.value = `https://res.cloudinary.com/dtb2b6cpx/image/fetch/http://image.tmdb.org/t/p/w780${item.dataset.image}`
-  console.log(remotePhoto.value)
 }
 
 const autocompleteSearch = function() {
@@ -46,6 +47,9 @@ const autocompleteSearch = function() {
           data.movies.forEach((movie) => {
             matches.push($.extend({ type: 'movie' }, movie));
           });
+          // data.albums.forEach((album) => {
+          //   matches.push($.extend({ type: 'album' }, album));
+          // });
           suggest(matches)
         });
       },
