@@ -8,6 +8,14 @@
 <% end %>
 </div>
 
+<div class="lists-index-title">
+  <% if params[:query].present?  %>
+    <h4><%= @lists.count %> Lists for "<%= params[:query] %>"</h4>
+  <% else %>
+    <h4>Re:co Lists you follow</h4>
+  <% end %>
+</div>
+
 <% @lists.each do |l| %>
   <div class="col-xs-12 col-sm-6 col-md-4">
     <%= link_to list_path(l), class: 'link-to-text-color' do %>
