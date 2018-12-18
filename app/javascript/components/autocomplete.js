@@ -14,11 +14,12 @@ const handleSelect = function(_e, _term, item) {
   const titleInput = document.getElementById('item_name');
   const imageInput = document.getElementById('item_photo');
   titleInput.value = item.dataset.title;
-  const posterPreview = document.getElementById("backdrop");
-  posterPreview.innerHTML = `<img src="http://image.tmdb.org/t/p/w780${item.dataset.image}">`;
+  // const posterPreview = document.getElementById("backdrop");
+  // posterPreview.innerHTML = `<img src="http://image.tmdb.org/t/p/w780${item.dataset.image}">`;
   const remotePhoto = document.getElementById("item_remote_photo")
-  remotePhoto.value = `http://image.tmdb.org/t/p/w780${item.dataset.image}`
-  console.log(item)
+  console.log(remotePhoto);
+  remotePhoto.value = `https://res.cloudinary.com/dtb2b6cpx/image/fetch/http://image.tmdb.org/t/p/w780${item.dataset.image}`
+  console.log(remotePhoto.value)
 }
 
 const autocompleteSearch = function() {
