@@ -14,6 +14,7 @@ gem 'record_tag_helper', '~> 1.0'
 gem 'httparty'
 gem 'popper_js', '~> 1.14.5'
 gem 'turbolinks', '~> 5.2.0'
+gem 'lastfm', '~> 1.27', '>= 1.27.1'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
