@@ -2,18 +2,37 @@
   <h4>You have <%= @items.count %> bookmarks</h4>
   <%= link_to "Back to my profile", profile_path(current_user) %>
 </div>
-<% @items.each do |i| %>
+<% @items.each do |item| %>
   <div class="col-xs-12">
       <div class="item">
-          <div class="item-photo" style="background-image: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url('<%= cl_image_path i.photo %>')">
+          <div class="item-photo" style="background-image: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url('<%= cl_image_path item.photo %>')">
           </div>
           <div class="item-info">
             <div class="item-details">
+              <div class="item-name-bookmark">
               <div class="item-name">
-                <h4><%= i.name  %></h4>
+                <h4><%= item.name  %></h4>
+              </div>
+               <div class="item-icons">
+                <div id="bm_<%=item.id%>">
+                  <% if current_user.bookmarked?(item) %>
+                  <%= link_to list_item_bookmark_path(item.list, item, current_user), remote: true, method: :delete, class: "liked" do %>
+                  <i class="fas fa-bookmark bookmark-but"></i>
+                  <% end %>
+                  <% else %>
+                  <%= link_to list_item_bookmarks_path(item.list, item, current_user), remote: true, method: :post do %>
+                  <i class="fas fa-bookmark bookmark-but"></i>
+                  <% end %>
+                  <% end %>
+                </div>
+              </div>
               </div>
               <div class="item-description">
-                <p><%=i.description%></p>
+                <p><%=item.description%></p>
+              </div>
+              <div class="list-link">
+                <p><em>In: "<%= item.list.name %>"</em></p>
+                <%= link_to "See list", list_path(item.list), class:"btn btn-primary btn-sm" %>
               </div>
           </div>
       </div>
