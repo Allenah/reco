@@ -1,4 +1,4 @@
-<% @items.each do |i| %>
+<% @items.order(created_at: :desc).each do |i| %>
   <div class="col-xs-12">
       <div class="item">
 
@@ -24,7 +24,7 @@
                 <%= f.input :description, label: false, placeholder: "Write your comment here..." %>
                 <%= f.submit "Add Comment", class: "btn btn-primary btn-sm" %>
                 <% end %>
-                <% i.comments.each do |c| %>
+                <% i.comments.order(created_at: :desc).each do |c| %>
                 <div class="message">
                   <img class="avatar-md" src="<%= cl_image_path c.user.photo %>">
                     <div class="message-body">
