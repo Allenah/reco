@@ -12,11 +12,12 @@ const renderItem = function (item) {
 
 const handleSelect = function(_e, _term, item) {
   const titleInput = document.getElementById('item_name');
-  const imageInput = document.getElementById('item_photo');
   titleInput.value = item.dataset.title;
-  // const posterPreview = document.getElementById("backdrop");
-  // posterPreview.innerHTML = `<img src="http://image.tmdb.org/t/p/w780${item.dataset.image}">`;
-  const remotePhoto = document.getElementById("item_remote_photo")
+  const posterPreview = document.getElementById("backdrop");
+  // posterPreview.insertAdjacentHTML('afterbegin', "<h3 class=''>Photo</h3>");
+  // posterPreview.insertAdjacentHTML('beforeend', `<img src="http://image.tmdb.org/t/p/w780${item.dataset.image}">`);
+  posterPreview.innerHTML = `<img src="http://image.tmdb.org/t/p/w780${item.dataset.image}">`;
+  const remotePhoto = document.getElementById("item_remote_photo");
   console.log(remotePhoto);
   remotePhoto.value = `https://res.cloudinary.com/dtb2b6cpx/image/fetch/http://image.tmdb.org/t/p/w780${item.dataset.image}`
   console.log(remotePhoto.value)
