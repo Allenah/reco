@@ -4,6 +4,7 @@
   background: white;
   border-radius: 4px;
   box-shadow:  0 1px 7px rgba(0,0,0,.05);
+  width: 90vw;
   height: auto;
 }
 
@@ -42,17 +43,31 @@
   box-shadow: none;
 }
 
+.items-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 .item-photo {
  background-position: center;
  background-size: cover !important;
  height: 200px;
 }
 
-.item-photo-album-movie {
+.item-photo-album {
   background-position: center;
   background-size: cover !important;
   background: no-repeat;
-  height: 350px;
+  height: 90vw;
+  width: 100%;
+}
+
+.item-photo-movie {
+  background-position: center;
+  background-size: cover !important;
+  background: no-repeat;
+  height: 50vw;
+  width: 100%;
 }
 
 .likes-container {
