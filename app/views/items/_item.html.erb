@@ -22,11 +22,16 @@
                   <p><%=i.description%></p>
                 </div>
 
-                <% if user_signed_in? && current_user.id == i.list.user_id %>
-                  <%= render partial: "items/ownericons", locals: {item: i} %>
-                <% else %>
-                  <%= render partial: "items/viewericons", locals: {item: i} %>
-                <% end %>
+
+              <% if user_signed_in? && current_user.id == i.list.user_id %>
+                <%= render partial: "items/ownericons", locals: {item: i} %>
+              <% else %>
+                <%= render partial: "items/viewericons", locals: {item: i} %>
+              <% end %>
+
+              <%= render partial: "items/comments", locals: {item: i, list: @list, comment: @comment} %>
+          </div>
+
 
                 <div class="comment-container collapse" id="<%="collapse#{i.id}" %>">
                   <%= simple_form_for [@list, i, @comment] do |f| %>
@@ -47,6 +52,7 @@
               </div>
             </div>
         </div>
+
       </div>
     </div>
 <% end %>
