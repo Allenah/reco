@@ -51,6 +51,10 @@ class ListsController < ApplicationController
   def update
     @list = List.find(params[:id])
     @list.update(list_params)
+    @list.listTags.destroy_all
+    params[:list][:tag_ids].each do |tag_id|
+      @list.listTags.create(tag_id: tag_id)
+    end
     redirect_to list_path(@list)
   end
 
@@ -61,7 +65,7 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:list_type, :name, :photo, :description)
+    params.require(:list).permit(:list_type, :name, :photo, :description, :tag_ids)
   end
 
 end
