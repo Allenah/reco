@@ -48,8 +48,11 @@
  height: 200px;
 }
 
-.item-details {
-
+.item-photo-album-movie {
+  background-position: center;
+  background-size: cover !important;
+  background: no-repeat;
+  height: 350px;
 }
 
 .likes-container {
