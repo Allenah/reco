@@ -1,8 +1,9 @@
 <% @items.order(created_at: :desc).each do |i| %>
   <div class="col-xs-12">
       <div class="item">
-
-          <div class="item-photo" style="background-image: url('<%=i.photo? ? cl_image_path(i.photo) : cl_image_path(i.remote_photo) %>')">
+          <div class="item-header">
+            <div class="<%= (i.list.list_type == 'albums' || i.list.list_type == 'movies') ? 'item-photo-album-movie' : 'item-photo'%>" style="background-image: url('<%=i.photo? ? cl_image_path(i.photo) : cl_image_path(i.remote_photo) %>')">
+            </div>
           </div>
           <div class="item-info">
             <div class="item-details">
