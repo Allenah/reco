@@ -6,7 +6,6 @@
   position: relative;
 }
 
-
 .list-title {
  display: flex;
  align-items: top;
@@ -48,8 +47,18 @@
 
 .link-profile {
   position: absolute;
-  top: 145px;
+  top: 135px;
   right: 7px;
+  .avatar {
+    width: 60px;
+    border-radius: 50%;
+    height: 60px;
+    // right: 5px;
+    border-style:solid;
+    border-color:white;
+    border-width: 1px;
+    box-shadow:  0 1px 7px rgba(250,250,250,0.6);
+  }
 }
 
 .list-hashtags p {
@@ -59,7 +68,7 @@
 }
 
 .list-banner {
-  background: white;
+  background: $my-green;
   box-shadow:  0 1px 7px rgba(0,0,0,.05);
   height: 200px;
   background-position: center;
