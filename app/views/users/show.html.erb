@@ -1,13 +1,12 @@
 
 <div class="profile-banner">
-<!-- <div class="profile-cover" style="background-image: url(<%= image_path 'cover.jpg' %>);"></div> -->
+  <h4><%= @user.first_name  %> <%= @user.last_name%></h4>
 <div class="profile-photo">
     <div class="avatar" style="background-image: url('<%= cl_image_path @user.photo %>')"></div>
   </div>
 </div>
 <div class="profile-info">
   <div class= "profile-details">
-    <h4><%= @user.first_name  %> <%= @user.last_name%></h4>
     <div class="profile-stats">
       <ul class="list-inline">
         <li><%= image_tag "r-logo1.png" %>
