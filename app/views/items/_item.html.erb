@@ -1,18 +1,27 @@
 <% @items.order(created_at: :desc).each do |i| %>
   <div class="col-xs-12">
-      <div class="item">
-          <div class="item-header">
-            <div class="<%= (i.list.list_type == 'albums' || i.list.list_type == 'movies') ? 'item-photo-album-movie' : 'item-photo'%>" style="background-image: url('<%=i.photo? ? cl_image_path(i.photo) : cl_image_path(i.remote_photo) %>')">
+      <div class="items-wrapper">
+        <div class="item">
+            <div class="item-header">
+              <div class="<%= if i.list.list_type == 'albums'
+                "item-photo-album"
+              elsif i.list.list_type == 'movies'
+                "item-photo-movie"
+              elsif i.list.list_type == 'restaurants'
+                "item-photo"
+              end %>"
+              style="background-image: url('<%=i.photo? ? cl_image_path(i.photo) : cl_image_path(i.remote_photo) %>')">
+              </div>
             </div>
-          </div>
-          <div class="item-info">
-            <div class="item-details">
-              <div class="item-name">
-                <h4><%= i.name  %></h4>
-              </div>
-              <div class="item-description">
-                <p><%=i.description%></p>
-              </div>
+            <div class="item-info">
+              <div class="item-details">
+                <div class="item-name">
+                  <h4><%= i.name  %></h4>
+                </div>
+                <div class="item-description">
+                  <p><%=i.description%></p>
+                </div>
+
 
               <% if user_signed_in? && current_user.id == i.list.user_id %>
                 <%= render partial: "items/ownericons", locals: {item: i} %>
@@ -22,6 +31,28 @@
 
               <%= render partial: "items/comments", locals: {item: i, list: @list, comment: @comment} %>
           </div>
+
+
+                <div class="comment-container collapse" id="<%="collapse#{i.id}" %>">
+                  <%= simple_form_for [@list, i, @comment] do |f| %>
+                  <%= f.input :description, label: false, placeholder: "Write your comment here..." %>
+                  <%= f.submit "Add Comment", class: "btn btn-primary btn-sm" %>
+                  <% end %>
+                  <% i.comments.order(created_at: :desc).each do |c| %>
+                  <div class="message">
+                    <img class="avatar-md" src="<%= cl_image_path c.user.photo %>">
+                      <div class="message-body">
+                        <span><strong><%= c.user.first_name %></strong>
+                          <br>
+                          <%= c.description %>
+                        </span>
+                      </div>
+                    </div>
+                  <% end %>
+              </div>
+            </div>
+        </div>
+
       </div>
     </div>
 <% end %>
