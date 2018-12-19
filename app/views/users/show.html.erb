@@ -25,7 +25,6 @@
   </div>
 </div>
 <div class="profile-lists">
-  <div class="list-type"><h4><i class="fas fa-list"></i> My Lists</h4></div>
   <div class="row">
   <% if @lists.any?{|list| list.list_type == 'restaurants'} %>
     <div class="col-xs-12"><div class="list-type"><h4><i class="fas fa-utensils"></i> Restaurants</h4></div></div>
