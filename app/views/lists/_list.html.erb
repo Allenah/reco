@@ -2,8 +2,10 @@
         <div class="list-header">
           <div class="list-banner" style="background-image: url('<%= cl_image_path @list.photo %>')">
           </div>
+          <%= link_to user_path(@list.user), class:"link-profile" do %>
             <div class="avatar-md avatar-position" style="background-image: url('<%= cl_image_path @list.user.photo %>')">
             </div>
+            <% end %>
 
             <div class="list-text-lockup">
 
