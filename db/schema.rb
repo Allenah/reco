@@ -125,4 +125,5 @@ ActiveRecord::Schema.define(version: 2018_12_17_184033) do
   add_foreign_key "likes", "users"
   add_foreign_key "list_tags", "lists"
   add_foreign_key "list_tags", "tags"
+  add_foreign_key "lists", "users"
 end
