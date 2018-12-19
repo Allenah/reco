@@ -5,6 +5,9 @@ Tag.destroy_all
 Item.destroy_all
 Comment.destroy_all
 ListTag.destroy_all
+Like.destroy_all
+Follow.destroy_all
+Bookmark.destroy_all
 
 puts 'Creating 3 users...'
 paul = User.create!(
@@ -249,7 +252,7 @@ lisbon2 = ListTag.create!(
 
 puts 'Finished Paul lists!'
 
-puts 'Creating 3 allenah restaurants lists...'
+puts 'Creating 2 allenah, 1 carolina restaurants lists...'
 
 brunch_restaurants = List.create!(
   list_type: 'restaurants',
@@ -272,10 +275,10 @@ italian_restaurants = List.create!(
   name: 'The best Italian cuisine',
   remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544694323/italian.jpg'),
   description: 'When you’re craving for crusty pizzas, for freshly made pasta, or for a break from the Portuguese traditional food, these are the best Italian restaurants in Lisbon.',
-  user_id: allenah.id
+  user_id: carolina.id
   )
 
-puts 'Creating 7 allenah restaurants items...'
+puts 'Creating 7 restaurants items...'
 
 zenith = Item.create!(
   name: 'Zenith',
@@ -326,7 +329,7 @@ mercantina = Item.create!(
   list_id: italian_restaurants.id
   )
 
-puts 'Creating 7 allenah restaurants comments...'
+puts 'Creating 7 restaurants comments...'
 
 zenith_comment = Comment.create!(
   description: 'I tried the pancakes and I loved it! Thanks for the tip!',
@@ -367,10 +370,10 @@ psi_comment = Comment.create!(
 mercantina_comment = Comment.create!(
   description: 'Freshly made pasta is the best, and this one is delicious!',
   item_id: mercantina.id,
-  user_id: carolina.id
+  user_id: paul.id
   )
 
-puts 'Creating 14 allenah restaurants list tags...'
+puts 'Creating 14 restaurants list tags...'
 
 brunch1 = ListTag.create!(
   list_id: brunch_restaurants.id,
@@ -442,7 +445,7 @@ tasty2 =  ListTag.create!(
   tag_id: tasty.id
   )
 
-puts 'Finished allenah restaurants lists!'
+puts 'Finished 2 allenah, 1 carolina restaurants lists!'
 
 puts 'Creating 3 allenah movies lists...'
 
@@ -1146,4 +1149,335 @@ monk1 = ListTag.create!(
   list_id: jazz_albums.id,
   tag_id: monk.id
   )
+
+puts 'Creating 3 extra albums lists...'
+
+rock_chops_albums = List.create!(
+  list_type: 'albums',
+  name: 'Rock Chops',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219457/497e8a34a39bcb9471396794df26e62d.jpg'),
+  description: 'This list explores the Powerful guitar licks from classic rock!',
+  user_id: allenah.id
+  )
+
+heavyweight_breaks_albums = List.create!(
+  list_type: 'albums',
+  name: 'Heavyweight Breaks',
+  remote_photo_url: 'https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219170/R-398776-1501976624-8387.jpeg.jpg',
+  description: 'Hot soul, funk, latin, and african beats!',
+  user_id: paul.id
+  )
+
+hip_hop_gems_albums = List.create!(
+  list_type: 'albums',
+  name: 'Hip-hop Gems',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219230/the-lost-tapes.jpg'),
+  description: 'A collection of hip-hop rarities',
+  user_id: paul.id
+  )
+
+puts 'Creating extra albums items...'
+
+valleys_of_neptune = Item.create!(
+  name: 'Valleys of Neptune',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219457/497e8a34a39bcb9471396794df26e62d.jpg'),
+  description: 'Valleys Of Neptune is far more than a quick payday for a record label, but rather a rock album that can be enjoyed just as one enjoys any other collection of high quality rock songs.',
+  list_id: rock_chops_albums.id
+  )
+
+van_halen = Item.create!(
+  name: 'Van Halen',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219283/220px-Van_Halen_album.jpg'),
+  description: 'Van Halen’s 1978 landmark debut is a dizzying, high energy set of musical napalm that left many gobsmacked guitar players in its wake.',
+  list_id: rock_chops_albums.id
+  )
+
+jailbreak = Item.create!(
+  name: 'Jailbreak',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219170/R-398776-1501976624-8387.jpeg.jpg'),
+  description: 'Thin Lizzy has a style of its own , it is not that heavy for a rock outfit but creates certain mood. And this is one of their best albums.',
+  list_id: rock_chops_albums.id
+  )
+raw_power = Item.create!(
+  name: 'Raw Power',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219499/R-489717-1268136694.jpeg.jpg'),
+  description: 'Album´s title is self-explanatory for itself. Difference is class that Williamson´s guitars gave to this experience, letting this album even more tasteful and seducing.',
+  list_id: rock_chops_albums.id
+  )
+
+let_it_bleed = Item.create!(
+  name: 'Let it Bleed',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219525/R-2244952-1331736823.jpeg.jpg'),
+  description: 'This is where the Stones became the world´s greatest rock and roll band. The groundwork was laid with Beggar´s Banquet, but solidified here.',
+  list_id: rock_chops_albums.id
+  )
+
+like_it_like_that = Item.create!(
+  name: 'I Like it Like That',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219555/151471841862.jpg'),
+  description: 'There´s a reason they called him Mr. Boogaloo, and that other Pete Rodriguez (not "El Conde") works through both swinging boogaloo and well-played salsa on his first LP, I Like It Like That.',
+  list_id: heavyweight_breaks_albums.id
+  )
+
+wanted_dead_or_alive = Item.create!(
+  name: 'Wanted Dead or Alive',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219579/640x640.jpg'),
+  description: 'Wanted Dead or Alive (Bang! Bang! Push Push Push) is part Latin, and part basic Latin soul (boogaloo). The boogaloos are very simple, relying on chants that live crowds could follow easily.',
+  list_id: heavyweight_breaks_albums.id
+  )
+
+panama_2 = Item.create!(
+  name: 'Panama 2',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219604/51UAXkAPJ7L._SX425_.jpg'),
+  description: 'Love this collection. These albums are to Panameno´s, what the 1920´s are to the Jazz culture. Awesome arrangement of sound and a perfectly put together track listing.',
+  list_id: heavyweight_breaks_albums.id
+  )
+
+ promised_heights = Item.create!(
+  name: 'Promised Heights',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219638/51ajpaHTZ8L.jpg'),
+  description: 'Promised Heights, the title cut, is strong, and should have done better for Cymande. It has the lilt and beauty of earlier sides, the horn work is sensational, and a nice sax solo scintillates.',
+  list_id: heavyweight_breaks_albums.id
+  )
+
+african_scream_contest = Item.create!(
+  name: 'African Scream Contest',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219670/a1311214925_5.jpg'),
+  description: 'What a crazy but totally exhilarating little soulfully psychedelic morsel from the deep dark corners of Africa! This comp is absolutely amazing, groovy beats, acid-like breakouts, fuzz guitar and an acceptable bootleg finish!',
+  list_id: heavyweight_breaks_albums.id
+  )
+
+good_foot = Item.create!(
+  name: 'Get On the Good Foot',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219804/51-MQJgdVdL.jpg'),
+  description: 'James Brown, like Johnny Cash, has more greatest hits albums than actual studio albums. So when you can find an actual studio album, you should get it. And this is an actual studio album. And it happens to be filled with some of his greatest hits, some of which are actually different versions than you may have heard already.',
+  list_id: heavyweight_breaks_albums.id
+  )
+
+let_my_people_go = Item.create!(
+  name: 'Let My People Go',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219842/darondo-let-my-people-go.jpg'),
+  description: 'The music on Let My People Go can stand proudly next to virtually any of Darondo´s creative contemporaries. In fact, the music on this reissue makes a good argument that, had he not abruptly disappeared, Darondo wouldn´t be obscure at all. Quite frankly, this is some of the best music available from what is generally regarded as a very impressive musical era.',
+  list_id: heavyweight_breaks_albums.id
+  )
+
+album_of_the_year = Item.create!(
+  name: 'Album Of The Year',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219877/220px-BlackMilkAlbumoftheYear.jpg'),
+  description: 'Album of the Year indeed. Black Milk´s beats are always hard and he is only improving on the mic. Proving that Detroit is a powerhouse of rap, he brings Royce and Elzhi from SV (or formerly of Slum Village) on for Deadly Meadly. This song is absolutely dope.',
+  list_id: hip_hop_gems_albums.id
+  )
+
+shame_ep = Item.create!(
+  name: 'Shame EP',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219907/51iNhMVGxlL._SY355_.jpg'),
+  description: 'Madlib is a genius and this record is worth every cent. Came shipped quick and in good packaging. Suggested for everyone who enjoys Madlib or Freddie Gibbs.',
+  list_id: hip_hop_gems_albums.id
+  )
+
+the_lost_tapes = Item.create!(
+  name: 'The Lost Tapes',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219230/the-lost-tapes.jpg'),
+  description: 'The Lost Tapes is GFK doing him, with hardcore lyricism and smooth, slick beats. He absolutely kills it with the guest features, which was the best thing about this project.',
+  list_id: hip_hop_gems_albums.id
+  )
+
+stones_throw = Item.create!(
+  name: 'Stones Throw',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219993/51EZbFpZDsL._SS500.jpg'),
+  description: 'Stones Throw Ten Years compiles 25 of the best releases of the last 10 years. The label has done an excellent job of capturing the diversity of their catalog - hip hop, funk, disco, experimental electro-soul/jazz.',
+  list_id: hip_hop_gems_albums.id
+  )
+
+puts 'Finished extra 3 albums lists'
+
+puts 'Starting demo extra seeds...'
+
+puts 'Creating paul dones...'
+
+like1 = Like.create!(
+  item_id: topo.id,
+  user_id: paul.id
+  )
+
+like2 = Like.create!(
+  item_id: psi.id,
+  user_id: paul.id
+  )
+
+like3 = Like.create!(
+  item_id: seven.id,
+  user_id: paul.id
+  )
+
+like4 = Like.create!(
+  item_id: home_alone.id,
+  user_id: paul.id
+  )
+
+like5 = Like.create!(
+  item_id: marley.id,
+  user_id: paul.id
+  )
+
+puts 'Creating allenah dones...'
+
+like6 = Like.create!(
+  item_id: mercantina.id,
+  user_id: allenah.id
+  )
+
+like7 = Like.create!(
+  item_id: quimera.id,
+  user_id: allenah.id
+  )
+
+like8 = Like.create!(
+  item_id: vince.id,
+  user_id: allenah.id
+  )
+
+like9 = Like.create!(
+  item_id: herbie.id,
+  user_id: allenah.id
+  )
+
+puts 'Creating brunch list dones...'
+
+like10 = Like.create!(
+  item_id: topo.id,
+  user_id: benjamin.id
+  )
+
+like11 = Like.create!(
+  item_id: topo.id,
+  user_id: carlotta.id
+  )
+
+like12 = Like.create!(
+  item_id: topo.id,
+  user_id: chris.id
+  )
+
+like13 = Like.create!(
+  item_id: boulangerie.id,
+  user_id: chris.id
+  )
+
+like14 = Like.create!(
+  item_id: heim.id,
+  user_id: clelia.id
+  )
+
+like15 = Like.create!(
+  item_id: heim.id,
+  user_id: jami.id
+  )
+
+like16 = Like.create!(
+  item_id: heim.id,
+  user_id: ines.id
+  )
+
+like17 = Like.create!(
+  item_id: heim.id,
+  user_id: manuel.id
+  )
+
+like18 = Like.create!(
+  item_id: amelia.id,
+  user_id: manuel.id
+  )
+
+like19 = Like.create!(
+  item_id: amelia.id,
+  user_id: ines.id
+  )
+
+like20 = Like.create!(
+  item_id: zenith.id,
+  user_id: ines.id
+  )
+
+puts 'Creating paul bookmarks...'
+
+boomark4 = Bookmark.create!(
+  item_id: suzanne.id,
+  user_id: paul.id
+  )
+
+boomark3 = Bookmark.create!(
+  item_id: amelia.id,
+  user_id: paul.id
+  )
+
+boomark2 = Bookmark.create!(
+  item_id: mercantina.id,
+  user_id: paul.id
+  )
+
+boomark1 = Bookmark.create!(
+  item_id: anger.id,
+  user_id: paul.id
+  )
+
+puts 'Creating paul follows...'
+
+follow4 = Follow.create!(
+  list_id: vegan_restaurants.id,
+  user_id: paul.id
+  )
+
+follow3 = Follow.create!(
+  list_id: reggae_albums.id,
+  user_id: paul.id
+  )
+
+follow2 = Follow.create!(
+  list_id: brunch_restaurants.id,
+  user_id: paul.id
+  )
+
+follow1 = Follow.create!(
+  list_id: christmas_movies.id,
+  user_id: paul.id
+  )
+
+puts 'Creating brunch heim comments...'
+
+heim_comment1 = Comment.create!(
+  description: 'They have three great brunch options!',
+  item_id: heim.id,
+  user_id: manuel.id
+  )
+
+heim_comment2 = Comment.create!(
+  description: 'A nice place for breakfast or for a coffee in the the middle of the day.',
+  item_id: heim.id,
+  user_id: carlotta.id
+  )
+
+heim_comment3 = Comment.create!(
+  description: 'The food is excelent and the staff is very nice,',
+  item_id: heim.id,
+  user_id: nick.id
+  )
+
+heim_comment4 = Comment.create!(
+  description: 'This is a super friendly place with great fresh orange juice and great dishes!',
+  item_id: heim.id,
+  user_id: mathilde.id
+  )
+
+puts 'Creating another vegan list item...'
+
+juicy = Item.create!(
+  name: 'Juicy',
+  remote_photo_url: 'https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545174945/juicy.jpg',
+  description: 'This restaurant just opened in the heart of Lisbon. It has great healthy, plant-based food.',
+  list_id: vegan_restaurants.id
+  )
+
+puts 'Finished extra seeds demo'
+
 puts 'Finished seeds'
