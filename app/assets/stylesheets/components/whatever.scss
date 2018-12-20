@@ -4,7 +4,6 @@
   background: white;
   border-radius: 4px;
   box-shadow:  0 1px 7px rgba(0,0,0,.05);
-  width: 90vw;
   height: auto;
 }
 
@@ -36,19 +35,11 @@
 .like-but {
   margin-top: 0px;
   box-shadow: none;
-  width: 16px;
-  margin-right: 5px;
-  margin-left: 0px;
 }
 
 .bookmark-but {
   margin-top: 0px;
   box-shadow: none;
-}
-
-.items-wrapper {
-  display: flex;
-  justify-content: center;
 }
 
 .item-photo {
@@ -57,20 +48,11 @@
  height: 200px;
 }
 
-.item-photo-album {
+.item-photo-album-movie {
   background-position: center;
   background-size: cover !important;
   background: no-repeat;
-  height: 90vw;
-  width: 100%;
-}
-
-.item-photo-movie {
-  background-position: center;
-  background-size: cover !important;
-  background: no-repeat;
-  height: 50vw;
-  width: 100%;
+  height: 350px;
 }
 
 .likes-container {

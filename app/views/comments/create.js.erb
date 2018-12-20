@@ -3,9 +3,9 @@
 console.log('Hells')
 // $('#comment<%= @item.id %>').prepend("<%=j render 'items/comments', locals: {item: @item } %>");
 
-function refreshForm(innerHTML) {
-  const newCommentForm = document.getElementById('new_comment');
-  newCommentForm.innerHTML = innerHTML;
+function refreshForm(input) {
+  const newCommentForm = document.getElementById('comment_description');
+  newCommentForm.value = input;
 }
 
 function addReview(reviewHTML) {
@@ -13,12 +13,10 @@ function addReview(reviewHTML) {
   comments.insertAdjacentHTML('afterbegin', reviewHTML);
 }
 
-//create html to add to comments
+<% if @comment.errors.any? %>
+  refreshForm('<%= j render "comments/commentform", list: @list, item: @item, comment: @comment %>');
+<% else %>
+  addReview('<%= j render "comments/comment", list: @list, item: @item, comment: @comment %>');
+  refreshForm('');
+<% end %>
 
-//get list
-// aappeend noew comment
-
-// clean the input box
-
-
-// handle errors
