@@ -9,7 +9,7 @@ class AutocompleteSearchService
 
   def call
     # { restaurants: restaurants, movies: movies }
-      { movies: movies, albums: albums }
+      { movies: movies, albums: albums, restaurants: restaurants }
       # { movies: movies }
       # { albums: albums }
     # { users: users, items: items }
