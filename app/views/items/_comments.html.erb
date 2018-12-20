@@ -1,7 +1,5 @@
 
-<div class="comment-container collapse" id="<%="collapse#{item.id}" %>">
-
-  <%= simple_form_for [@list, item, @comment], remote: true do |f| %>
+  <%= simple_form_for [@list, @item, @comment], remote: true do |f| %>
   <%= f.input :description, label: false, placeholder: "Write your comment here..." %>
   <%= f.submit "Add Comment", class: "btn btn-primary btn-sm" %>
   <% end %>
@@ -19,4 +17,3 @@
     </div>
     <% end %>
   </div>
-</div>
