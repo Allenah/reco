@@ -1,9 +1,5 @@
-console.log('CreateHells')
-// $('#comment<%= @item.id %>').prepend("<%=j render 'items/comments', locals: {item: @item } %>");
-
-function refreshForm(input) {
-  const newCommentForm = document.getElementById('<%="comment-container#{@item.id}" %>');
-  newCommentForm.value = input;
+function refreshForm() {
+  document.querySelector('#item-<%="#{@item.id}"%> #comment_description').value='';
 }
 
 function addReview(reviewHTML) {
@@ -11,10 +7,12 @@ function addReview(reviewHTML) {
   comments.insertAdjacentHTML('afterbegin', reviewHTML);
 }
 
+
+var formHTML = '<%= j render "comments/commentform", list: @list, item: @item, comment: @comment %>';
+
 <% if @comment.errors.any? %>
-  refreshForm('<%= j render "comments/commentform", list: @list, item: @item, comment: @comment %>');
+  refreshForm();
 <% else %>
   addReview('<%= j render "comments/comment", list: @list, item: @item, comment: @comment %>');
-  refreshForm('');
+  refreshForm();
 <% end %>
-
