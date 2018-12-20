@@ -4,8 +4,17 @@
 </div>
 <% @items.each do |item| %>
   <div class="col-xs-12">
-      <div class="item" id="<%="remove_#{item.id}" %>">
-          <div class="item-photo" style="background-image: url('<%=item.photo? ? cl_image_path(item.photo) : cl_image_path(item.remote_photo) %>')">
+      <div class="items-wrapper">
+      <div class="item">
+          <div class="item-header">
+            <div class="<%= if item.list.list_type == 'albums'
+            "item-photo-album"
+            elsif item.list.list_type == 'movies'
+            "item-photo-movie"
+            elsif item.list.list_type == 'restaurants'
+            "item-photo"
+            end %>"
+            style="background-image: url('<%=item.photo? ? cl_image_path(item.photo) : cl_image_path(item.remote_photo) %>')"></div>
           </div>
           <div class="item-info">
             <div class="item-details">
@@ -35,6 +44,7 @@
                 <%= link_to "See list", list_path(item.list), class:"btn btn-primary btn-sm" %>
               </div>
           </div>
+        </div>
       </div>
     </div>
 <% end %>
