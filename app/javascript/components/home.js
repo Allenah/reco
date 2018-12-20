@@ -1,5 +1,4 @@
 function horizontalScrollingBanner() {
-  console.log('hello from scrollingBanner');
   var banners = document.getElementsByClassName('horizontal-scrolling-banner');
   if (!banners || banners.length === 0) {
     return;
@@ -64,15 +63,16 @@ function horizontalScrollingBanner() {
       var offsetLeft = helperWrapper.offsetLeft;
 
       if (offsetLeft <= (childrenWidth * -1)) {
-        helperWrapper.style.transitionDuration = '0s';
+        helperWrapper.style.transitionDuration = '20s';
         helperWrapper.style.left = '0px';
         helperWrapper.style.removeProperty('transition-duration');
       } else if (helperWrapper.style.left === '' || helperWrapper.style.left === '0px') {
         setTimeout(function() {
-          helperWrapper.style.transitionDuration = (childrenWidth / pxPerSecond).toFixed() + 's';
+          helperWrapper.style.transitionDuration = '20s';
           helperWrapper.style.left = (childrenWidth * -1) + 'px';
         }, 0);
       }
+
     }
     requestAnimationFrame(scrollTheBanners);
   }
