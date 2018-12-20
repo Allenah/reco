@@ -29,10 +29,10 @@
 
 
             <div class="comment-container collapse" id="<%="collapse#{i.id}" %>">
-            <%= render partial: "comments/commentform", locals: {list: i.list, item:i, comment: @comment} %>
-              <div id="messages-container">
+            <%= render partial: "comments/commentform", locals: {list: i.list, item: i, comment: @comment} %>
+              <div id="<%="messages-container#{i.id}" %>">
                 <% i.comments.order(created_at: :desc).each do |c| %>
-                  <%= render partial: "comments/comment", locals: {comment: c} %>
+                  <%= render partial: "comments/comment", locals: {list: i.list, item: i, comment: c } %>
                 <% end %>
               </div>
           </div>

@@ -1,15 +1,13 @@
-
-
-console.log('Hells')
+console.log('CreateHells')
 // $('#comment<%= @item.id %>').prepend("<%=j render 'items/comments', locals: {item: @item } %>");
 
 function refreshForm(input) {
-  const newCommentForm = document.getElementById('comment_description');
+  const newCommentForm = document.getElementById('<%="comment-container#{@item.id}" %>');
   newCommentForm.value = input;
 }
 
 function addReview(reviewHTML) {
-  const comments = document.getElementById('messages-container');
+  const comments = document.getElementById('<%="messages-container#{@item.id}" %>');
   comments.insertAdjacentHTML('afterbegin', reviewHTML);
 }
 
