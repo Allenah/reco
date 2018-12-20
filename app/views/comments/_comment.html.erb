@@ -1,9 +1,16 @@
-<div class="message">
+<div class="message" id="rm_<%=comment.id%>">
   <img class="avatar-md" src="<%= cl_image_path comment.user.photo %>">
-  <div class="message-body">
+  <div class="message-body" id="remove_<%=comment.id%>">
   <span><strong><%= comment.user.first_name %></strong>
   <br>
   <%= comment.description %>
   </span>
   </div>
+  <% if user_signed_in? && current_user.id == comment.user_id %>
+  <div class="delete-icon">
+    <%= link_to list_item_comment_path(comment.item.list, comment.item, comment), remote: true, method: :delete, class: "liked" do %>
+      <i class="fas fa-trash-alt comment-but"></i>
+    <% end %>
+  </div>
+  <% end %>
 </div>

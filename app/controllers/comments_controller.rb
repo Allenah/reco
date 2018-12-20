@@ -28,6 +28,24 @@ class CommentsController < ApplicationController
     # redirect_to list_path(@list)
   end
 
+  def destroy
+    @item = Item.find(params[:item_id])
+    @user = current_user
+    @comment = @user.comments.find(params[:id])
+    @comment.destroy!
+    if @comment.destroy
+        respond_to do |format|
+          format.html { redirect_to list_path(@list) }
+          format.js  # <-- will render `app/views/reviews/create.js.erb`
+        end
+      else
+        respond_to do |format|
+          format.html { render 'lists/show' }
+          format.js  # <-- idem
+        end
+    end
+  end
+
   private
 
   def comment_params

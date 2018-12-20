@@ -1,4 +1,9 @@
-<%= simple_form_for([list, item, comment], remote: true) do |f| %>
-  <%= f.input :description, label: false, placeholder: "Write your comment here..." %>
-  <%= f.submit "Add Comment", class: "btn btn-primary btn-sm" %>
-<% end %>
+<div id="item-<%= item.id %>">
+  <%= simple_form_for([list, item, comment], remote: true) do |f| %>
+    <div class="pleasework">
+    <%= f.input :description, label: false, placeholder: "Write your comment here..." %>
+    </div>
+    <%= f.submit "Add Comment", class: "btn btn-primary btn-sm" %>
+  <% end %>
+</div>
+
