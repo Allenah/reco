@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def new
     @item = Item.new
+    @comment = Comment.new
   end
 
   def create

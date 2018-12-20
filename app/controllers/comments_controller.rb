@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @list = List.find(params[:list_id])
+    @items = @list.items
     @item = Item.find(params[:item_id])
     @listtags = @list.listTags
     @comment.item = @item

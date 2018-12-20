@@ -1,4 +1,4 @@
-<%= simple_form_for [i, @comment] do |f| %>
-  <%= f.input :description, value:"comment", placeholder:"write your comments here..." %>
-  <%= f.submit "Add Comment", class: "btn btn-success" %>
+<%= simple_form_for([list, item, comment], remote: true) do |f| %>
+  <%= f.input :description, label: false, placeholder: "Write your comment here..." %>
+  <%= f.submit "Add Comment", class: "btn btn-primary btn-sm" %>
 <% end %>
