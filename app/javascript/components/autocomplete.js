@@ -49,14 +49,14 @@ const autocompleteSearch = function() {
           // data.items.forEach((item) => {
           //   matches.push({type: 'item', name: item });
           // });
-          // data.restaurants.forEach((restaurant) => {
-          //   matches.push($.extend({ type: 'restaurant', name: restaurant.terms[0]["value"] }, restaurant));
-          // });
           data.movies.forEach((movie) => {
             matches.push($.extend({ type: 'movie', name: movie.title, photo: `http://image.tmdb.org/t/p/w780${movie.backdrop_path}` }, movie));
           });
           data.albums.forEach((album) => {
             matches.push($.extend({ type: 'album', name: album.name, photo: album.images[0].url }, album));
+          });
+          data.restaurants.forEach((restaurant) => {
+            matches.push($.extend({ type: 'restaurant', name: restaurant.terms[0]["value"] }, restaurant));
           });
           suggest(matches)
         });
