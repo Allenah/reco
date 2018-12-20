@@ -881,9 +881,9 @@ puts 'Creating 2 paul movies lists...'
 
 pixar_movies = List.create!(
   list_type: 'movies',
-  name: 'Best Pixar movies',
-  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544962749/pixar.png'),
-  description: 'These are my favorite Pixar movies of all times.',
+  name: 'Best Animation movies',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545325649/up.jpg'),
+  description: 'These are my favorite animation movies of all times.',
   user_id: paul.id
   )
 
@@ -926,7 +926,7 @@ die_hard = Item.create!(
   )
 
 matrix = Item.create!(
-  name: 'The Matrx',
+  name: 'The Matrix',
   remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544972082/matrix.jpg'),
   description: 'The Matrix is a smartly crafted combination of spectacular action and groundbreaking special effects.',
   list_id: action_movies.id
@@ -1083,13 +1083,6 @@ monk = Item.create!(
   name: 'Monk’s Dream',
   remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544977723/monk.png'),
   description: 'While Monk’s Dream was not a turning point in the career of Thelonious Monk, it was a turning point in the acceptance of his work.',
-  list_id: jazz_albums.id
-  )
-
-vince = Item.create!(
-  name: 'A Charlie Brown Christmas',
-  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544977790/vince.png'),
-  description: 'Vince Guaraldi innovative compositions and arrangements are great!',
   list_id: jazz_albums.id
   )
 
@@ -1332,11 +1325,6 @@ like7 = Like.create!(
   user_id: allenah.id
   )
 
-like8 = Like.create!(
-  item_id: vince.id,
-  user_id: allenah.id
-  )
-
 like9 = Like.create!(
   item_id: herbie.id,
   user_id: allenah.id
@@ -1430,11 +1418,6 @@ follow4 = Follow.create!(
 
 follow3 = Follow.create!(
   list_id: reggae_albums.id,
-  user_id: paul.id
-  )
-
-follow2 = Follow.create!(
-  list_id: brunch_restaurants.id,
   user_id: paul.id
   )
 
