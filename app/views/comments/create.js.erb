@@ -1,7 +1,17 @@
 
 
 console.log('Hells')
-$('#comment<%= @item.id %>').prepend("<%=j render 'items/comments', item: @item, comment: @comment, remote: true %>");
+// $('#comment<%= @item.id %>').prepend("<%=j render 'items/comments', locals: {item: @item } %>");
+
+function refreshForm(innerHTML) {
+  const newCommentForm = document.getElementById('new_comment');
+  newCommentForm.innerHTML = innerHTML;
+}
+
+function addReview(reviewHTML) {
+  const comments = document.getElementById('messages-container');
+  comments.insertAdjacentHTML('afterbegin', reviewHTML);
+}
 
 //create html to add to comments
 

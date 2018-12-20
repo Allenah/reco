@@ -5,23 +5,21 @@
       <%= render partial: "likes/buttonlikes", locals: { item: item } %>
       <% end %>
     </div>
-    <div id="<%="likes-count#{item.id}"%>">
-      <%= item.likes.size %>
-    </div>
+    <div id="<%="likes-count#{item.id}"%>"><%= item.likes.size %></div>
   </div>
   <div class="list-comment-icon">
-   <a data-toggle="collapse" href="<%= "#collapse#{item.id}" %>" role="button" aria-expanded="false" aria-controls="<%="collapse#{item.id}" %>"><i class="far fa-comment"></i></a>
+    <a data-toggle="collapse" href="<%= "#collapse#{item.id}" %>" role="button" aria-expanded="false" aria-controls="<%="collapse#{item.id}" %>"><i class="far fa-comment"></i></a>
   </div>
   <div id="bm_<%=item.id%>">
-  <% if current_user.bookmarked?(item) %>
+    <% if current_user.bookmarked?(item) %>
     <%= link_to list_item_bookmark_path(item.list, item, current_user), remote: true, method: :delete, class: "liked" do %>
-      <i class="fas fa-bookmark bookmark-but"></i>
+    <i class="fas fa-bookmark bookmark-but"></i>
     <% end %>
-  <% else %>
+    <% else %>
     <%= link_to list_item_bookmarks_path(item.list, item, current_user), remote: true, method: :post do %>
-      <i class="fas fa-bookmark bookmark-but"></i>
+    <i class="fas fa-bookmark bookmark-but"></i>
     <% end %>
-  <% end %>
+    <% end %>
   </div>
 </div>
 
