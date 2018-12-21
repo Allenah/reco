@@ -12,3 +12,7 @@
 @import "banner";
 @import "autocomplete";
 @import "bookmarksindex";
+.form-control:focus {
+  border-color: $my-green;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(98,168,124,0.6);
+}
