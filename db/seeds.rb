@@ -719,12 +719,12 @@ puts 'Finished adding friendships!'
 
 puts 'Creating 12 users...'
 
-benjamin = User.create!(
-  first_name: "Benjamin",
-  last_name: "Dunisch",
-  email: "benjamin@gmail.com",
+pedro = User.create!(
+  first_name: "Pedro",
+  last_name: "Nogueira",
+  email: "pedro@gmail.com",
   password: "secret",
-  remote_photo_url:'https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544959802/benjamin.jpg'
+  remote_photo_url:'https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545389499/vshknq7igz6riezeeo4n.jpg'
   )
 
 carlotta = User.create!(
@@ -799,6 +799,14 @@ ruben = User.create!(
   remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544960453/ruben.jpg')
   )
 
+rui = User.create!(
+  first_name: "Rui",
+  last_name: "Freitas",
+  email: "rui@gmail.com",
+  password: "secret",
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545389622/nhj1vjezuu8ztul8yopm.jpg')
+  )
+
 thomas = User.create!(
   first_name: "Thomas",
   last_name: "Singell",
@@ -819,7 +827,7 @@ puts 'Creating 12 friendships...'
 
 friendship4 = Friendship.create!(
   user_id: paul.id,
-  friend_id: benjamin.id
+  friend_id: pedro.id
   )
 
 friendship5 = Friendship.create!(
@@ -875,6 +883,11 @@ friendship14 = Friendship.create!(
 friendship15 = Friendship.create!(
   user_id: paul.id,
   friend_id: vasco.id
+  )
+
+friendship16 = Friendship.create!(
+  user_id: paul.id,
+  friend_id: rui.id
   )
 
 puts 'Creating 2 paul movies lists...'
@@ -1334,7 +1347,7 @@ puts 'Creating brunch list dones...'
 
 like10 = Like.create!(
   item_id: topo.id,
-  user_id: benjamin.id
+  user_id: pedro.id
   )
 
 like11 = Like.create!(
@@ -1408,11 +1421,33 @@ boomark1 = Bookmark.create!(
   item_id: anger.id,
   user_id: paul.id
   )
+puts 'Creating 2 extra lists...'
+
+rui_rock_album = List.create!(
+  list_type: 'albums',
+  name: 'Rui´s Rock Chops',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545219457/497e8a34a39bcb9471396794df26e62d.jpg'),
+  description: 'This list explores the Powerful guitar licks from classic rock!',
+  user_id: rui.id
+  )
+
+bairro_bars_album = List.create!(
+  list_type: 'albums',
+  name: 'Best bars in Bairro',
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1545390367/492618.jpg'),
+  description: 'My favourite bars in Bairro Alto',
+  user_id: pedro.id
+  )
 
 puts 'Creating paul follows...'
 
-follow4 = Follow.create!(
+follow1 = Follow.create!(
   list_id: vegan_restaurants.id,
+  user_id: paul.id
+  )
+
+follow2 = Follow.create!(
+  list_id: rui_rock_album.id,
   user_id: paul.id
   )
 
@@ -1421,7 +1456,12 @@ follow3 = Follow.create!(
   user_id: paul.id
   )
 
-follow1 = Follow.create!(
+follow4 = Follow.create!(
+  list_id: bairro_bars_album.id,
+  user_id: paul.id
+  )
+
+follow5 = Follow.create!(
   list_id: christmas_movies.id,
   user_id: paul.id
   )
@@ -1460,6 +1500,8 @@ juicy = Item.create!(
   description: 'This restaurant just opened in the heart of Lisbon. It has great healthy, plant-based food.',
   list_id: vegan_restaurants.id
   )
+
+
 
 puts 'Finished extra seeds demo'
 
