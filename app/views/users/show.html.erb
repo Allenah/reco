@@ -1,6 +1,6 @@
 
 <div class="profile-banner">
-  <h4><%= @user.first_name  %> <%= @user.last_name%></h4>
+  <h4 class="test-header"><%= @user.first_name  %> <%= @user.last_name%></h4>
 <div class="profile-photo">
     <div class="avatar" style="background-image: url('<%= cl_image_path @user.photo %>')"></div>
   </div>
@@ -28,7 +28,7 @@
 <div class="profile-lists">
   <div class="row">
   <% if @lists.any?{|list| list.list_type == 'restaurants'} %>
-    <div class="col-xs-12"><div class="list-type"><h4><i class="fas fa-utensils"></i> Restaurants</h4></div></div>
+    <div class="col-xs-12"><div class="list-type"><h4><i class="fas fa-utensils"></i> Restaurants<span class="colon-green"> :</span></h4></div></div>
     <div class="scroll-area">
       <div class="scroll">
         <div class="inner-scroll">
@@ -56,7 +56,7 @@
     </div>
   <% end %>
   <% if @lists.any?{|list| list.list_type == 'movies'} %>
-    <div class="col-xs-12"><div class="list-type"><h4><i class="fas fa-video"></i> Movies</h4></div></div>
+    <div class="col-xs-12"><div class="list-type"><h4><i class="fas fa-video"></i> Movies<span class="colon-green"> :</span></h4></div></div>
     <div class="scroll-area">
       <div class="scroll">
         <div class="inner-scroll">
@@ -84,7 +84,7 @@
     </div>
   <% end %>
   <% if @lists.any?{|list| list.list_type == 'albums'} %>
-    <div class="col-xs-12"><div class="list-type"><h4><i class="fas fa-music"></i> Albums</h4></div></div>
+    <div class="col-xs-12"><div class="list-type"><h4><i class="fas fa-music"></i> Albums<span class="colon-green"> :</span></h4></div></div>
     <div class="scroll-area">
         <div class="scroll">
           <div class="inner-scroll">

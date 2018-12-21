@@ -17,6 +17,15 @@
   color: $my-green;
 }
 
+
+input::placeholder{
+  color: $my-green;
+}
+
+input {
+  color: $my-green;
+}
+
 .item-icons a {
   color: $my-gray;
 }
