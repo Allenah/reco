@@ -5,7 +5,7 @@
 <% @items.each do |item| %>
   <div class="col-xs-12">
       <div class="items-wrapper">
-      <div class="item">
+      <div class="item" id="remove_<%=item.id%>">
           <div class="item-header">
             <div class="<%= if item.list.list_type == 'albums'
             "item-photo-album"
