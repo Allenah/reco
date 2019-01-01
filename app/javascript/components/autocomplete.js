@@ -55,9 +55,9 @@ const autocompleteSearch = function() {
           data.albums.forEach((album) => {
             matches.push($.extend({ type: 'album', name: album.name, photo: album.images[0].url }, album));
           });
-          data.restaurants.forEach((restaurant) => {
-            matches.push($.extend({ type: 'restaurant', name: restaurant.terms[0]["value"] }, restaurant));
-          });
+          // data.restaurants.forEach((restaurant) => {
+          //   matches.push($.extend({ type: 'restaurant', name: restaurant.terms[0]["value"] }, restaurant));
+          // });
           suggest(matches)
         });
       },
