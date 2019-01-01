@@ -8,9 +8,9 @@ class AutocompleteSearchService
   end
 
   def call
-    # { restaurants: restaurants, movies: movies }
-      { movies: movies, albums: albums, restaurants: restaurants }
       { movies: movies, albums: albums }
+    # { restaurants: restaurants, movies: movies }
+      # { movies: movies, albums: albums, restaurants: restaurants }
       # { movies: movies }
       # { albums: albums }
   end
@@ -35,15 +35,11 @@ class AutocompleteSearchService
   end
 
   def movies
-    # initiate client
-    # call TMDB API
     client = Tmdb::Api.key(ENV['TMDB_API_KEY'])
     search = Tmdb::Search.new.query(@term)
     results = search.fetch
     puts results.inspect
     results.take(3)
-
-    # @movie = Tmdb::Movie.images(22855)
   end
 
   def albums
