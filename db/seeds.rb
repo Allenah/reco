@@ -11,11 +11,11 @@ Bookmark.destroy_all
 
 puts 'Creating 3 users...'
 paul = User.create!(
-  first_name: "Paul",
-  last_name: "Busby",
-  email: "paul.busby@gmail.com",
-  password: "secret1",
-  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1544534332/paul_avatar.jpg')
+  first_name: "Guest",
+  last_name: "User",
+  email: "guest@gmail.com",
+  password: "recoguest",
+  remote_photo_url: ('https://res.cloudinary.com/dtb2b6cpx/image/upload/v1546533953/avatar-1577909__340.png')
   )
 
 carolina = User.create!(
