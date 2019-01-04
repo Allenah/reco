@@ -1,10 +1,10 @@
 <div class="message" id="rm_<%=comment.id%>">
   <img class="avatar-md" src="<%= cl_image_path comment.user.photo %>">
   <div class="message-body" id="remove_<%=comment.id%>">
-  <span><strong><%= comment.user.first_name %></strong>
-  <br>
-  <%= comment.description %>
-  </span>
+    <span><strong><%= comment.user.first_name %></strong>
+    <br>
+    <%= comment.description %>
+    </span>
   </div>
   <% if user_signed_in? && current_user.id == comment.user_id %>
   <div class="delete-icon">

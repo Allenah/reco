@@ -23,5 +23,4 @@ class Friendship < ApplicationRecord
   def inverse_friendship_options
     { friend_id: user_id, user_id: friend_id }
   end
-
 end

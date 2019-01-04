@@ -10,14 +10,15 @@
           elsif i.list.list_type == 'restaurants'
           "item-photo"
           end %>"
-          style="background-image: url('<%=i.photo? ? cl_image_path(i.photo) : cl_image_path(i.remote_photo) %>')"></div>
+          style="background-image: url('<%=i.photo? ? cl_image_path(i.photo) : cl_image_path(i.remote_photo) %>')">
+          </div>
         </div>
         <div class="item-info">
           <div class="item-details">
             <div class="item-name">
               <h4><%= i.name  %><span class="colon-green"> :</span></h4>
-              </div>
-              <div class="item-description">
+            </div>
+            <div class="item-description">
               <p><%=i.description%></p>
             </div>
 
@@ -27,7 +28,6 @@
             <%= render partial: "items/viewericons", locals: {item: i} %>
             <% end %>
 
-
             <div class="comment-container collapse" id="<%="collapse#{i.id}" %>">
             <%= render partial: "comments/commentform", locals: {list: i.list, item: i, comment: @comment} %>
               <div id="<%="messages-container#{i.id}" %>">
@@ -35,9 +35,9 @@
                   <%= render partial: "comments/comment", locals: {list: i.list, item: i, comment: c } %>
                 <% end %>
               </div>
+            </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
 <% end %>

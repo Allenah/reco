@@ -26,10 +26,6 @@ class User < ApplicationRecord
     self.likes.find_by_item_id(item.id)
   end
 
-  # def liked_item?(item_id)
-  #   likes.where(user_id: id, item_id: item_id).any?
-  # end
-
   def follow!(list)
     self.follows.create(list_id: list.id)
   end
@@ -53,7 +49,5 @@ class User < ApplicationRecord
   def bookmarked?(item)
     self.bookmarks.find_by_item_id(item.id)
   end
-
 end
-
 

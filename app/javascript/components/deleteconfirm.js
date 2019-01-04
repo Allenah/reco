@@ -1,3 +1,4 @@
+// TODO - implement sweetalerts for desktop viewing
 // import swal from 'sweetalert';
 
 // function bindSweetAlertButtonDemo() {

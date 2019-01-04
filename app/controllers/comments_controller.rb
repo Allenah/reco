@@ -1,6 +1,4 @@
 class CommentsController < ApplicationController
-  # respond_to :js, :json, :html
-
   def index
     @comment = Comment.new
     @comments = Comment.all
@@ -15,15 +13,15 @@ class CommentsController < ApplicationController
     @comment.item = @item
     @comment.user = current_user
     if @comment.save
-        respond_to do |format|
-          format.html { redirect_to list_path(@list) }
-          format.js  # <-- will render `app/views/reviews/create.js.erb`
-        end
-      else
-        respond_to do |format|
-          format.html { render 'lists/show' }
-          format.js  # <-- idem
-        end
+      respond_to do |format|
+        format.html { redirect_to list_path(@list) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render 'lists/show' }
+        format.js  # <-- idem
+      end
     end
     # redirect_to list_path(@list)
   end
@@ -34,15 +32,15 @@ class CommentsController < ApplicationController
     @comment = @user.comments.find(params[:id])
     @comment.destroy!
     if @comment.destroy
-        respond_to do |format|
-          format.html { redirect_to list_path(@list) }
-          format.js  # <-- will render `app/views/reviews/create.js.erb`
-        end
-      else
-        respond_to do |format|
-          format.html { render 'lists/show' }
-          format.js  # <-- idem
-        end
+      respond_to do |format|
+        format.html { redirect_to list_path(@list) }
+        format.js # <-- will render `app/views/comments/destroy.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render 'lists/show' }
+        format.js
+      end
     end
   end
 
@@ -51,5 +49,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:description, :item_id, :user_id)
   end
-
 end
