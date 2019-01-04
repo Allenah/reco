@@ -2,6 +2,7 @@
   <%= simple_form_for [@list, @item] do |f| %>
       <%= f.association :list, collection: List.where(user_id: current_user), include_blank: false %>
       <%= f.input :name, label: "Title", autocomplete: :off %>
+      <!-- added hidden field "remote_photo" -->
       <%=f.input :remote_photo, as: :hidden %>
       <div class="preview-image" id="backdrop"></div>
       <label>
@@ -15,8 +16,3 @@
       <%= f.submit "Save item", class: "btn btn-primary" %>
   <% end %>
 </div>
-
-
-<!-- add hidden field "remote_photo" -->
-<!-- add remote_photo field to Item model (string field) -->
-<!-- populate (change value) hidden field in the js file -->

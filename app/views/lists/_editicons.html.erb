@@ -1,14 +1,11 @@
-<!-- <div class="text-icon-lockup">
-  <div class="list-icon-lockup"> -->
-    <span class="list-edit-icon">
-     <%= link_to edit_list_path(@list) do %>
-     <i class="fas fa-pencil-alt"></i>
-     <% end %>
-    </span>
-    <span class="list-delete-icon">
-      <%= link_to list_path(@list), method: :delete, data: { confirm: 'Are you sure?' } do %>
-          <i class="fas fa-trash-alt"></i>
-      <% end %>
-    </span>
-<!--   </div>
-</div> -->
+<span class="list-edit-icon">
+ <%= link_to edit_list_path(@list) do %>
+ <i class="fas fa-pencil-alt"></i>
+ <% end %>
+</span>
+<span class="list-delete-icon">
+  <%= link_to list_path(@list), method: :delete, data: { confirm: 'Are you sure?' } do %>
+      <i class="fas fa-trash-alt"></i>
+  <% end %>
+</span>
+

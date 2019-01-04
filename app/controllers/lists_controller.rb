@@ -38,8 +38,6 @@ class ListsController < ApplicationController
     @listtags = ListTag.where(list_id: @list)
     @items = Item.where(list_id: @list)
     @comment = Comment.new
-    # @user = current_user
-    # @comments = Comment.where(user_id: @user, item_id: @item)
   end
 
   def destroy

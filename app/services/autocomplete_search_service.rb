@@ -1,6 +1,4 @@
 class AutocompleteSearchService
-  # include HTTParty
-  # base_uri "https://api.github.com/"
   require 'rspotify'
 
   def initialize(term)
@@ -8,18 +6,13 @@ class AutocompleteSearchService
   end
 
   def call
-      { movies: movies, albums: albums }
-    # { restaurants: restaurants, movies: movies }
-      # { movies: movies, albums: albums, restaurants: restaurants }
-      # { movies: movies }
-      # { albums: albums }
+    { movies: movies, albums: albums }
+    # { movies: movies, albums: albums, restaurants: restaurants }
   end
 
   private
 
   def restaurants
-    # initiate client
-    # call Google Places API
     client = GooglePlaces::Client.new(ENV['GOOGLE_API_KEY'])
     results = client.predictions_by_input(
         @term,
@@ -30,8 +23,6 @@ class AutocompleteSearchService
         language: I18n.locale,
     )
     results.take(3)
-    # results.map { |m| m.terms[0]["value"] }.take(5)
-    # # results.first.terms[0]["value"]
   end
 
   def movies
@@ -57,4 +48,3 @@ class AutocompleteSearchService
     Item.find_by_name(@term).map(&:name).take(5)
   end
 end
-
